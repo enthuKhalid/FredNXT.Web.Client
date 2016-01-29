@@ -1,0 +1,2340 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="FredNXT.Web.Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AccountNum" Type="Edm.String" />
+        <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CustomerType" Type="Edm.String" Nullable="false" />
+        <Property Name="TitleId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PaymTermId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="OrganisationName" Type="Edm.String" />
+        <Property Name="OrganisationAbn" Type="Edm.String" />
+        <Property Name="IsDebtor" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Balance" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxGroupId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MigrationTable" Type="Edm.String" />
+        <Property Name="MigrationKey" Type="Edm.String" />
+        <Property Name="CustGroupId" Type="Edm.String" />
+        <Property Name="IsTransfer" Type="Edm.String" />
+        <Property Name="SalesGSTPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustGroupRecId" Type="Edm.Int64" Nullable="false" />
+        <NavigationProperty Name="CustomerDebtor" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_Customer_CustomerDebtor_FredNXT_Web_Model_CustomerDebtor_CustomerDebtorPartner" ToRole="CustomerDebtor" FromRole="CustomerDebtorPartner" />
+        <NavigationProperty Name="Addresses" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_Customer_Addresses_FredNXT_Web_Model_Address_AddressesPartner" ToRole="Addresses" FromRole="AddressesPartner" />
+        <NavigationProperty Name="ContactInformation" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_Customer_ContactInformation_FredNXT_Web_Model_ContactInformation_ContactInformationPartner" ToRole="ContactInformation" FromRole="ContactInformationPartner" />
+      </EntityType>
+      <EntityType Name="CustTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="AccountNum" Type="Edm.String" />
+        <Property Name="AccountStatement" Type="Edm.String" Nullable="false" />
+        <Property Name="AgencyLocationCode" Type="Edm.String" />
+        <Property Name="AuthorityOffice_IT" Type="Edm.String" />
+        <Property Name="BankAccount" Type="Edm.String" />
+        <Property Name="BankCentralBankPurposeCod_7" Type="Edm.String" />
+        <Property Name="BankCentralBankPurposeTex_8" Type="Edm.String" />
+        <Property Name="BankCustPaymIdTable" Type="Edm.Int64" Nullable="false" />
+        <Property Name="BirthCountyCode_IT" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.String" Nullable="false" />
+        <Property Name="CashDisc" Type="Edm.String" />
+        <Property Name="CashDiscBaseDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ClearingPeriod" Type="Edm.String" />
+        <Property Name="CommercialRegister" Type="Edm.String" />
+        <Property Name="CommercialRegisterInsetNu_21" Type="Edm.String" />
+        <Property Name="CommercialRegisterSection_22" Type="Edm.String" />
+        <Property Name="CommissionGroup" Type="Edm.String" />
+        <Property Name="CompanyChainId" Type="Edm.String" />
+        <Property Name="CompanyIdSiret" Type="Edm.String" />
+        <Property Name="CompanyNAFCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ContactPersonId" Type="Edm.String" />
+        <Property Name="CreditCardAddressVerifica_30" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardAddressVerifica_31" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardAddressVerifica_32" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardCVC" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditMax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditRating" Type="Edm.String" />
+        <Property Name="Currency" Type="Edm.String" />
+        <Property Name="CustClassificationId" Type="Edm.String" />
+        <Property Name="CustExcludeCollectionFee" Type="Edm.String" Nullable="false" />
+        <Property Name="CustExcludeInterestCharge_40" Type="Edm.String" Nullable="false" />
+        <Property Name="CustGroup" Type="Edm.String" />
+        <Property Name="CustItemGroupId" Type="Edm.String" />
+        <Property Name="CustTradingPartnerCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DefaultDirectDebitMandate_48" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DefaultInventStatusId" Type="Edm.String" />
+        <Property Name="DestinationCodeId" Type="Edm.String" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="DlvReason" Type="Edm.String" />
+        <Property Name="DlvTerm" Type="Edm.String" />
+        <Property Name="EndDisc" Type="Edm.String" />
+        <Property Name="EnterpriseCode" Type="Edm.String" />
+        <Property Name="EnterpriseNumber" Type="Edm.String" />
+        <Property Name="EntryCertificateRequired__60" Type="Edm.String" Nullable="false" />
+        <Property Name="ExpressBillOfLading" Type="Edm.String" Nullable="false" />
+        <Property Name="FactoringAccount" Type="Edm.String" />
+        <Property Name="FederalComments" Type="Edm.String" />
+        <Property Name="FedNonFedIndicator" Type="Edm.String" Nullable="false" />
+        <Property Name="FiscalCode" Type="Edm.String" />
+        <Property Name="ForecastDMPInclude" Type="Edm.String" Nullable="false" />
+        <Property Name="FreightZone" Type="Edm.String" />
+        <Property Name="GiroType" Type="Edm.String" Nullable="false" />
+        <Property Name="GiroTypeAccountStatement" Type="Edm.String" Nullable="false" />
+        <Property Name="GiroTypeCollectionletter" Type="Edm.String" Nullable="false" />
+        <Property Name="GiroTypeFreeTextInvoice" Type="Edm.String" Nullable="false" />
+        <Property Name="GiroTypeInterestNote" Type="Edm.String" Nullable="false" />
+        <Property Name="GiroTypeProjInvoice" Type="Edm.String" Nullable="false" />
+        <Property Name="IdentificationNumber" Type="Edm.String" />
+        <Property Name="InclTax" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAllowIndirect_86" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAutoCreateOrd_87" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyDirectDeliver_88" Type="Edm.String" Nullable="false" />
+        <Property Name="InventLocation" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InvoiceAccount" Type="Edm.String" />
+        <Property Name="InvoiceAddress" Type="Edm.String" Nullable="false" />
+        <Property Name="IRS1099CIndicator" Type="Edm.String" Nullable="false" />
+        <Property Name="IsResident_LV" Type="Edm.String" Nullable="false" />
+        <Property Name="IssueOwnEntryCertificate__99" Type="Edm.String" Nullable="false" />
+        <Property Name="LineDisc" Type="Edm.String" />
+        <Property Name="LineOfBusinessId" Type="Edm.String" />
+        <Property Name="LvPaymTransCodes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MainContactWorker" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MandatoryCreditLimit" Type="Edm.String" Nullable="false" />
+        <Property Name="MarkupGroup" Type="Edm.String" />
+        <Property Name="MCRMergedParent" Type="Edm.String" />
+        <Property Name="MCRMergedRoot" Type="Edm.String" />
+        <Property Name="Memo" Type="Edm.String" />
+        <Property Name="MigrationKey" Type="Edm.String" />
+        <Property Name="MigrationTable" Type="Edm.String" />
+        <Property Name="MultiLineDisc" Type="Edm.String" />
+        <Property Name="numberSequenceGroup" Type="Edm.String" />
+        <Property Name="OneTimeCustomer" Type="Edm.String" Nullable="false" />
+        <Property Name="OrderEntryDeadlineGroupId_117" Type="Edm.String" />
+        <Property Name="OrgId" Type="Edm.String" />
+        <Property Name="OurAccountNum" Type="Edm.String" />
+        <Property Name="PackMaterialFeeLicenseNum_122" Type="Edm.String" />
+        <Property Name="Party" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PartyCountry" Type="Edm.String" />
+        <Property Name="PartyState" Type="Edm.String" />
+        <Property Name="PaymDayId" Type="Edm.String" />
+        <Property Name="PaymIdType" Type="Edm.String" />
+        <Property Name="PaymMode" Type="Edm.String" />
+        <Property Name="PaymSched" Type="Edm.String" />
+        <Property Name="PaymSpec" Type="Edm.String" />
+        <Property Name="PaymTermId" Type="Edm.String" />
+        <Property Name="PBACustGroupId" Type="Edm.String" />
+        <Property Name="PdsCustRebateGroupId" Type="Edm.String" />
+        <Property Name="PdsFreightAccrued" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsRebateTMAGroup" Type="Edm.String" />
+        <Property Name="PriceGroup" Type="Edm.String" />
+        <Property Name="RFIDCaseTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="RFIDItemTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="RFIDPalletTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesCalendarId" Type="Edm.String" />
+        <Property Name="SalesDistrictId" Type="Edm.String" />
+        <Property Name="SalesGroup" Type="Edm.String" />
+        <Property Name="SalesPoolId" Type="Edm.String" />
+        <Property Name="SegmentId" Type="Edm.String" />
+        <Property Name="ShipCarrierAccount" Type="Edm.String" />
+        <Property Name="ShipCarrierAccountCode" Type="Edm.String" />
+        <Property Name="ShipCarrierBlindShipment" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierFuelSurcharge" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierId" Type="Edm.String" />
+        <Property Name="StatisticsGroup" Type="Edm.String" />
+        <Property Name="SubsegmentId" Type="Edm.String" />
+        <Property Name="SuppItemGroupId" Type="Edm.String" />
+        <Property Name="SyncVersion" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxBorderNumber_FI" Type="Edm.String" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxGSTReliefGroupHeading__168" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxLicenseNum" Type="Edm.String" />
+        <Property Name="TaxWithholdCalculate_TH" Type="Edm.String" Nullable="false" />
+        <Property Name="UseCashDisc" Type="Edm.String" Nullable="false" />
+        <Property Name="usePurchRequest" Type="Edm.String" Nullable="false" />
+        <Property Name="VATNum" Type="Edm.String" />
+        <Property Name="VendAccount" Type="Edm.String" />
+        <Property Name="WebSalesOrderDisplay" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="CustomerBalance" Type="Edm.Decimal" Nullable="false" />
+        <NavigationProperty Name="SalesItems" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_SalesItems_FredNXT_Web_Model_SalesTable_SalesItemsPartner" ToRole="SalesItems" FromRole="SalesItemsPartner" />
+        <NavigationProperty Name="ContactDetails" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner" ToRole="ContactDetails" FromRole="ContactDetailsPartner" />
+        <NavigationProperty Name="PostalDetails" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner" ToRole="PostalDetails" FromRole="PostalDetailsPartner" />
+      </EntityType>
+      <EntityType Name="CustVendExternalItem">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ABCCategory" Type="Edm.String" Nullable="false" />
+        <Property Name="CustVendRelation" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="ExternalItemId" Type="Edm.String" />
+        <Property Name="ExternalItemTxt" Type="Edm.String" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="ModuleType" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="DirPartyTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="InstanceRelationType" Type="Edm.Int64" Nullable="false" />
+        <Property Name="KnownAs" Type="Edm.String" />
+        <Property Name="LanguageId" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="NameAlias" Type="Edm.String" />
+        <Property Name="PartyNumber" Type="Edm.String" />
+        <Property Name="PrimaryAddressLocationId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactEmailId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactFaxId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactPhoneId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactTelexId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactURLId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrimaryContactEmail" Type="Edm.String" />
+        <Property Name="PrimaryContactFax" Type="Edm.String" />
+        <Property Name="PrimaryContactPhone" Type="Edm.String" />
+        <Property Name="PrimaryContactTelex" Type="Edm.String" />
+        <Property Name="PrimaryContactURL" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="DMFProductTargetEntity">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <NavigationProperty Name="InventTable" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_InventTable_FredNXT_Web_Model_InventTable_InventTablePartner" ToRole="InventTable" FromRole="InventTablePartner" />
+        <NavigationProperty Name="EcoresProduct" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_EcoresProduct_FredNXT_Web_Model_EcoresProduct_EcoresProductPartner" ToRole="EcoresProduct" FromRole="EcoresProductPartner" />
+        <NavigationProperty Name="EcoResProductTranslation" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_EcoResProductTranslation_FredNXT_Web_Model_EcoResProductTranslation_EcoResProductTranslationPartner" ToRole="EcoResProductTranslation" FromRole="EcoResProductTranslationPartner" />
+        <NavigationProperty Name="RetailInventTable" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_RetailInventTable_FredNXT_Web_Model_RetailInventTable_RetailInventTablePartner" ToRole="RetailInventTable" FromRole="RetailInventTablePartner" />
+        <NavigationProperty Name="CustVendExternalItem" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_CustVendExternalItem_FredNXT_Web_Model_CustVendExternalItem_CustVendExternalItemPartner" ToRole="CustVendExternalItem" FromRole="CustVendExternalItemPartner" />
+        <NavigationProperty Name="ModuleInvent" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModuleInvent_FredNXT_Web_Model_InventTableModule_ModuleInventPartner" ToRole="ModuleInvent" FromRole="ModuleInventPartner" />
+        <NavigationProperty Name="ModulePurch" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModulePurch_FredNXT_Web_Model_InventTableModule_ModulePurchPartner" ToRole="ModulePurch" FromRole="ModulePurchPartner" />
+        <NavigationProperty Name="ModuleSales" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModuleSales_FredNXT_Web_Model_InventTableModule_ModuleSalesPartner" ToRole="ModuleSales" FromRole="ModuleSalesPartner" />
+      </EntityType>
+      <EntityType Name="EcoresProduct">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="DisplayProductNumber" Type="Edm.String" />
+        <Property Name="InstanceRelationType" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PdsCWProduct" Type="Edm.String" Nullable="false" />
+        <Property Name="ProductType" Type="Edm.String" Nullable="false" />
+        <Property Name="SearchName" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="EcoResProductTranslation">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="LanguageId" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Product" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="HcmWorker">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="Person" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PersonnelNumber" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventDim">
+        <Key>
+          <PropertyRef Name="inventDimId" />
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="configId" Type="Edm.String" />
+        <Property Name="inventBatchId" Type="Edm.String" />
+        <Property Name="InventColorId" Type="Edm.String" />
+        <Property Name="inventDimId" Type="Edm.String" Nullable="false" />
+        <Property Name="InventLocationId" Type="Edm.String" />
+        <Property Name="inventSerialId" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InventSizeId" Type="Edm.String" />
+        <Property Name="InventStatusId" Type="Edm.String" />
+        <Property Name="InventStyleId" Type="Edm.String" />
+        <Property Name="LicensePlateId" Type="Edm.String" />
+        <Property Name="wMSLocationId" Type="Edm.String" />
+        <Property Name="wMSPalletId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventJournalTrans">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ActivityNumber" Type="Edm.String" />
+        <Property Name="AssetBookId" Type="Edm.String" />
+        <Property Name="AssetId" Type="Edm.String" />
+        <Property Name="AssetTransType" Type="Edm.String" Nullable="false" />
+        <Property Name="BOMLine" Type="Edm.String" Nullable="false" />
+        <Property Name="CostAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Counted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FredIsCounted" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="InventOnHand" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventRefId" Type="Edm.String" />
+        <Property Name="InventRefTransId" Type="Edm.String" />
+        <Property Name="InventRefType" Type="Edm.String" Nullable="false" />
+        <Property Name="InventTransId" Type="Edm.String" />
+        <Property Name="InventTransIdFather" Type="Edm.String" />
+        <Property Name="InventTransIdReturn" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="JournalId" Type="Edm.String" />
+        <Property Name="JournalType" Type="Edm.String" Nullable="false" />
+        <Property Name="LedgerDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCopyBatchAttrib" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsCWInventOnHand" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWInventQtyCounted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProfitSet" Type="Edm.String" Nullable="false" />
+        <Property Name="ProjCategoryId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="ProjLinePropertyId" Type="Edm.String" />
+        <Property Name="ProjSalesCurrencyId" Type="Edm.String" />
+        <Property Name="ProjSalesPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProjTaxGroupId" Type="Edm.String" />
+        <Property Name="ProjTaxItemGroupId" Type="Edm.String" />
+        <Property Name="ProjTransId" Type="Edm.String" />
+        <Property Name="ProjUnitID" Type="Edm.String" />
+        <Property Name="Qty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReasonRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReleaseDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReqPOId" Type="Edm.String" />
+        <Property Name="RetailInfocodeIdEx2" Type="Edm.String" />
+        <Property Name="RetailInformationSubcodeI_52" Type="Edm.String" />
+        <Property Name="SalesAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ToInventDimId" Type="Edm.String" />
+        <Property Name="ToInventTransId" Type="Edm.String" />
+        <Property Name="TransDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Voucher" Type="Edm.String" />
+        <Property Name="Worker" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="InventJournalNameId" Type="Edm.String" />
+        <Property Name="InventJournalNameDescription" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventItemBarcode">
+        <Key>
+          <PropertyRef Name="ItemId" />
+        </Key>
+        <Property Name="BarcodeSetupId" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="ItemBarCode" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" Nullable="false" />
+        <Property Name="Qty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetailShowForItem" Type="Edm.String" Nullable="false" />
+        <Property Name="RetailVariantId" Type="Edm.String" />
+        <Property Name="UnitId" Type="Edm.String" />
+        <Property Name="UseForInput" Type="Edm.String" Nullable="false" />
+        <Property Name="UseForPrinting" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventPromotion">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="OfferId" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="PeriodicDiscountType" Type="Edm.String" Nullable="false" />
+        <Property Name="PriceDiscGroup" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DiscountPercentValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ValidFrom" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ValidTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventSum">
+        <Key>
+          <PropertyRef Name="ItemId" />
+        </Key>
+        <Property Name="ItemId" Type="Edm.String" Nullable="false" />
+        <Property Name="PhysicalInvent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReservePhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OnOrder" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OrderedSum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Arrived" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AvailOrdered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AvailPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Deducted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="Picked" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostedQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="QuotationIssue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Received" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Registered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReserveOrdered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AverageCostPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ABCContributionMargin" Type="Edm.String" Nullable="false" />
+        <Property Name="ABCRevenue" Type="Edm.String" Nullable="false" />
+        <Property Name="ABCTieUp" Type="Edm.String" Nullable="false" />
+        <Property Name="ABCValue" Type="Edm.String" Nullable="false" />
+        <Property Name="ACItemId" Type="Edm.String" />
+        <Property Name="AltConfigId" Type="Edm.String" />
+        <Property Name="AltInventColorId" Type="Edm.String" />
+        <Property Name="AltInventSizeId" Type="Edm.String" />
+        <Property Name="AltInventStyleId" Type="Edm.String" />
+        <Property Name="AltItemId" Type="Edm.String" />
+        <Property Name="AutoReportFinished" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchMergeDateCalculation_18" Type="Edm.String" Nullable="false" />
+        <Property Name="BatchNumGroupId" Type="Edm.String" />
+        <Property Name="BOMCalcGroupId" Type="Edm.String" />
+        <Property Name="BOMLevel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BOMManualReceipt" Type="Edm.String" Nullable="false" />
+        <Property Name="BOMUnitId" Type="Edm.String" />
+        <Property Name="CommissionGroupId" Type="Edm.String" />
+        <Property Name="CostGroupId" Type="Edm.String" />
+        <Property Name="CostModel" Type="Edm.String" Nullable="false" />
+        <Property Name="DAXIntegrationKey" Type="Edm.Guid" Nullable="false" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Density" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Depth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EPCManager" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FiscalLIFOAvoidCalc" Type="Edm.String" Nullable="false" />
+        <Property Name="FiscalLIFONormalValue" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FiscalLIFONormalValueCalc_41" Type="Edm.String" Nullable="false" />
+        <Property Name="ForecastDMPInclude" Type="Edm.String" Nullable="false" />
+        <Property Name="FredLegacyItemId" Type="Edm.String" />
+        <Property Name="FREDManufacturer" Type="Edm.String" />
+        <Property Name="FredMolecule" Type="Edm.String" />
+        <Property Name="FredPendingProduct" Type="Edm.String" Nullable="false" />
+        <Property Name="grossDepth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="grossHeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="grossWidth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Height" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Intracode" Type="Edm.String" />
+        <Property Name="IntraUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventFiscalLIFOGroup" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ItemBuyerGroupId" Type="Edm.String" />
+        <Property Name="ItemDimCostPrice" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="ItemPriceToleranceGroupId_61" Type="Edm.String" />
+        <Property Name="ItemTaggingLevel" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemType" Type="Edm.String" Nullable="false" />
+        <Property Name="MatchingPolicy" Type="Edm.String" Nullable="false" />
+        <Property Name="MinimumPalletQuantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NameAlias" Type="Edm.String" />
+        <Property Name="NetWeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="NGPCodesTable_FR" Type="Edm.Int64" Nullable="false" />
+        <Property Name="NRTaxGroup_LV" Type="Edm.String" />
+        <Property Name="OrigCountryRegionId" Type="Edm.String" />
+        <Property Name="OrigCountyId" Type="Edm.String" />
+        <Property Name="OrigStateId" Type="Edm.String" />
+        <Property Name="PackagingGroupId" Type="Edm.String" />
+        <Property Name="PalletTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAAutoStart" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAHideApproval" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAHideDialog" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAInventItemGroupId" Type="Edm.String" />
+        <Property Name="PBAItemAutoGenerated" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAItemConfigurable" Type="Edm.String" Nullable="false" />
+        <Property Name="PBAMandatoryConfig" Type="Edm.String" Nullable="false" />
+        <Property Name="PDSBaseAttributeId" Type="Edm.String" />
+        <Property Name="PdsBestBefore" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PdsCWWMSMinimumPalletQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWWMSQtyPerLayer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWWMSStandardPalletQty_89" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsFreightAllocationGroup_90" Type="Edm.String" />
+        <Property Name="PdsItemRebateGroupId" Type="Edm.String" />
+        <Property Name="PDSPotencyAttribRecording_92" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsShelfAdvice" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PdsShelfLife" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PDSTargetFactor" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsVendorCheckItem" Type="Edm.String" Nullable="false" />
+        <Property Name="Phantom" Type="Edm.String" Nullable="false" />
+        <Property Name="PmfPlanningItemId" Type="Edm.String" />
+        <Property Name="PmfProductType" Type="Edm.String" Nullable="false" />
+        <Property Name="PmfYieldPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrimaryVendorId" Type="Edm.String" />
+        <Property Name="ProdFlushingPrincip" Type="Edm.String" Nullable="false" />
+        <Property Name="ProdGroupId" Type="Edm.String" />
+        <Property Name="ProdPoolId" Type="Edm.String" />
+        <Property Name="Product" Type="Edm.Int64" Nullable="false" />
+        <Property Name="projCategoryId" Type="Edm.String" />
+        <Property Name="PropertyId" Type="Edm.String" />
+        <Property Name="PurchModel" Type="Edm.String" Nullable="false" />
+        <Property Name="qtyPerLayer" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReqGroupId" Type="Edm.String" />
+        <Property Name="SalesContributionRatio" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesModel" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesPercentMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesPriceModelBasic" Type="Edm.String" Nullable="false" />
+        <Property Name="ScrapConst" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ScrapVar" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SerialNumGroupId" Type="Edm.String" />
+        <Property Name="sortCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StandardConfigId" Type="Edm.String" />
+        <Property Name="StandardInventColorId" Type="Edm.String" />
+        <Property Name="StandardInventSizeId" Type="Edm.String" />
+        <Property Name="StandardInventStyleId" Type="Edm.String" />
+        <Property Name="standardPalletQuantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="StatisticsFactor" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaraWeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxPackagingQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UnitVolume" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UseAltItemId" Type="Edm.String" Nullable="false" />
+        <Property Name="Width" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="WMSPalletTypeId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="ItemBuyerGroupDescription" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventTableModule">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="AllocateMarkup" Type="Edm.String" Nullable="false" />
+        <Property Name="EndDisc" Type="Edm.String" Nullable="false" />
+        <Property Name="FREDChangeProcessed" Type="Edm.String" Nullable="false" />
+        <Property Name="FREDDateProcessed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="InterCompanyBlocked" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="LineDisc" Type="Edm.String" />
+        <Property Name="Markup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MarkupGroupId" Type="Edm.String" />
+        <Property Name="ModuleType" Type="Edm.String" Nullable="false" />
+        <Property Name="MultiLineDisc" Type="Edm.String" />
+        <Property Name="OverDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PDSPricingPrecision" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PriceQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SuppItemGroupId" Type="Edm.String" />
+        <Property Name="TaxGSTReliefCategory_MY" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TaxItemGroupId" Type="Edm.String" />
+        <Property Name="TaxWithholdCalculate_TH" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxWithholdItemGroupHeadi_25" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UnderDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UnitId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventTable_Summary">
+        <Key>
+          <PropertyRef Name="ItemId" />
+        </Key>
+        <Property Name="AbcContributionMargin" Type="Edm.String" Nullable="false" />
+        <Property Name="AbcRevenue" Type="Edm.String" Nullable="false" />
+        <Property Name="AbcTieUp" Type="Edm.String" Nullable="false" />
+        <Property Name="AbcValue" Type="Edm.String" Nullable="false" />
+        <Property Name="ACItemId" Type="Edm.String" />
+        <Property Name="AltConfigId" Type="Edm.String" />
+        <Property Name="AltInventColorId" Type="Edm.String" />
+        <Property Name="AltInventSizeid" Type="Edm.String" />
+        <Property Name="AltInventStyleId" Type="Edm.String" />
+        <Property Name="AltItemId" Type="Edm.String" />
+        <Property Name="BatchNumGroupId" Type="Edm.String" />
+        <Property Name="BOMCalcGroupId" Type="Edm.String" />
+        <Property Name="BOMLevel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ItemBOMManualReceipt" Type="Edm.String" Nullable="false" />
+        <Property Name="BOMUnitId" Type="Edm.String" />
+        <Property Name="CommissionGroupId" Type="Edm.String" />
+        <Property Name="CostGroupId" Type="Edm.String" />
+        <Property Name="CostModel" Type="Edm.String" Nullable="false" />
+        <Property Name="DefaulDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Density" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Depth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FREDManufacturer" Type="Edm.String" />
+        <Property Name="FredpendingProduct" Type="Edm.String" Nullable="false" />
+        <Property Name="GrossDepth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="GrossHeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="GrossWidth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Height" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ItemBuyerGroupId" Type="Edm.String" />
+        <Property Name="ItemDimCostPrice" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemId" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemPriceToleranceGroupId" Type="Edm.String" />
+        <Property Name="ItemTaggingLevel" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemType" Type="Edm.String" Nullable="false" />
+        <Property Name="NameAlias" Type="Edm.String" />
+        <Property Name="NetWeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PackagingGroupId" Type="Edm.String" />
+        <Property Name="PrimaryVendorid" Type="Edm.String" />
+        <Property Name="ProdGroupId" Type="Edm.String" />
+        <Property Name="ProdPoolId" Type="Edm.String" />
+        <Property Name="Product" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProjCategoryId" Type="Edm.String" />
+        <Property Name="PropertyId" Type="Edm.String" />
+        <Property Name="ItemPurchModel" Type="Edm.String" Nullable="false" />
+        <Property Name="ReqGroupId" Type="Edm.String" />
+        <Property Name="SalesContributionRatio" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesModel" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesPercentMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesPriceModelBasic" Type="Edm.String" Nullable="false" />
+        <Property Name="SerialNumGroupId" Type="Edm.String" />
+        <Property Name="SortCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StandardConfigId" Type="Edm.String" />
+        <Property Name="StandardinventColorId" Type="Edm.String" />
+        <Property Name="StandardInventSizeId" Type="Edm.String" />
+        <Property Name="StandardInventStyleId" Type="Edm.String" />
+        <Property Name="StandardpalletQuantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxPackagingQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UnitVolume" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="UseAltItemid" Type="Edm.String" Nullable="false" />
+        <Property Name="Width" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <NavigationProperty Name="Barcodes" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_Barcodes_FredNXT_Web_Model_InventItemBarcode_BarcodesPartner" ToRole="Barcodes" FromRole="BarcodesPartner" />
+        <NavigationProperty Name="PurchTaxOnItem" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_PurchTaxOnItem_FredNXT_Web_Model_TaxOnItem_PurchTaxOnItemPartner" ToRole="PurchTaxOnItem" FromRole="PurchTaxOnItemPartner" />
+        <NavigationProperty Name="SalesTaxOnItem" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_SalesTaxOnItem_FredNXT_Web_Model_TaxOnItem_SalesTaxOnItemPartner" ToRole="SalesTaxOnItem" FromRole="SalesTaxOnItemPartner" />
+        <NavigationProperty Name="PriceDiscTable" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_PriceDiscTable_FredNXT_Web_Model_PriceDiscTable_PriceDiscTablePartner" ToRole="PriceDiscTable" FromRole="PriceDiscTablePartner" />
+        <NavigationProperty Name="InventSum" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_InventSum_FredNXT_Web_Model_InventSum_InventSumPartner" ToRole="InventSum" FromRole="InventSumPartner" />
+        <NavigationProperty Name="InventPromotion" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_InventPromotion_FredNXT_Web_Model_InventPromotion_InventPromotionPartner" ToRole="InventPromotion" FromRole="InventPromotionPartner" />
+      </EntityType>
+      <EntityType Name="InventTrans">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ActivityNumber" Type="Edm.String" />
+        <Property Name="CostAmountAdjustment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostAmountOperations" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostAmountPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostAmountPosted" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostAmountSettled" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CostAmountStd" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="DateClosed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DateExpected" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DateFinancial" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DateInvent" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DatePhysical" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DateStatus" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="InterCompanyInventDimTran_23" Type="Edm.String" Nullable="false" />
+        <Property Name="inventDimFixed" Type="Edm.Int32" Nullable="false" />
+        <Property Name="inventDimId" Type="Edm.String" />
+        <Property Name="InventTransOrigin" Type="Edm.Int64" Nullable="false" />
+        <Property Name="InvoiceId" Type="Edm.String" />
+        <Property Name="InvoiceReturned" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="MarkingRefInventTransOrig_34" Type="Edm.Int64" Nullable="false" />
+        <Property Name="NonFinancialTransferInven_35" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PackingSlipId" Type="Edm.String" />
+        <Property Name="PackingSlipReturned" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsCWQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWSettled" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PickingRouteID" Type="Edm.String" />
+        <Property Name="ProjAdjustRefId" Type="Edm.String" />
+        <Property Name="ProjCategoryId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="Qty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="QtySettled" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReturnInventTransOrigin" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RevenueAmountPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ShippingDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StatusIssue" Type="Edm.String" Nullable="false" />
+        <Property Name="StatusReceipt" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxAmountPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TransChildRefId" Type="Edm.String" />
+        <Property Name="TransChildType" Type="Edm.String" Nullable="false" />
+        <Property Name="ValueOpen" Type="Edm.String" Nullable="false" />
+        <Property Name="Voucher" Type="Edm.String" />
+        <Property Name="VoucherPhysical" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="InventTransOrigin">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="InventTransId" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="ItemInventDimId" Type="Edm.String" />
+        <Property Name="Party" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReferenceCategory" Type="Edm.String" Nullable="false" />
+        <Property Name="ReferenceId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="LogisticsPostalAddress">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="BuildingCompliment" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="CityRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CountryRegionId" Type="Edm.String" />
+        <Property Name="County" Type="Edm.String" />
+        <Property Name="District" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DistrictName" Type="Edm.String" />
+        <Property Name="IsPrivate" Type="Edm.String" Nullable="false" />
+        <Property Name="Latitude" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Location" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Longitude" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PostBox" Type="Edm.String" />
+        <Property Name="PrivateForParty" Type="Edm.Int64" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="StreetNumber" Type="Edm.String" />
+        <Property Name="TimeZone" Type="Edm.String" Nullable="false" />
+        <Property Name="ValidFrom" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ValidTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ZipCode" Type="Edm.String" />
+        <Property Name="ZipCodeRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PriceDiscTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AccountCode" Type="Edm.String" Nullable="false" />
+        <Property Name="AccountRrelation" Type="Edm.String" />
+        <Property Name="Agreement" Type="Edm.String" />
+        <Property Name="AllocateMarkup" Type="Edm.String" Nullable="false" />
+        <Property Name="Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CalendarDays" Type="Edm.String" Nullable="false" />
+        <Property Name="Currency" Type="Edm.String" />
+        <Property Name="DeliveryTime" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DisregardLeadTime" Type="Edm.String" Nullable="false" />
+        <Property Name="FromDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SalesGenericCurrency" Type="Edm.String" Nullable="false" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="ItemCode" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemRelation" Type="Edm.String" />
+        <Property Name="Markup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MCRFixedAmountCur" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MCRMerchandisingEventID" Type="Edm.String" />
+        <Property Name="MCRPriceDiscGroupType" Type="Edm.String" Nullable="false" />
+        <Property Name="Module" Type="Edm.String" Nullable="false" />
+        <Property Name="OriginalPriceDiscAdmTransrecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PDSCalculationId" Type="Edm.String" />
+        <Property Name="Percent1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Percent2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="QuantityAmountFrom" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="QuantityAmountTo" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Relation" Type="Edm.String" Nullable="false" />
+        <Property Name="SearchAgain" Type="Edm.String" Nullable="false" />
+        <Property Name="ToDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="UnitId" Type="Edm.String" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ProductData">
+        <Key>
+          <PropertyRef Name="ItemId" />
+        </Key>
+        <Property Name="ItemId" Type="Edm.String" Nullable="false" />
+        <Property Name="FredLegacyItemId" Type="Edm.String" />
+        <Property Name="HQId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ItemType" Type="Edm.String" Nullable="false" />
+        <Property Name="SearchName" Type="Edm.String" />
+        <Property Name="ItemBuyerGroupId" Type="Edm.String" />
+        <Property Name="grossHeight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FREDManufacturer" Type="Edm.String" />
+        <Property Name="grossWidth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="grossDepth" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionGroupId" Type="Edm.String" />
+        <Property Name="PurchModel" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsVendorCheckItem" Type="Edm.String" Nullable="false" />
+        <Property Name="FredHideFromCustomer" Type="Edm.String" Nullable="false" />
+        <Property Name="ZeroPriceValid" Type="Edm.String" Nullable="false" />
+        <Property Name="NoDiscountAllowed" Type="Edm.String" Nullable="false" />
+        <Property Name="BlockedOnPOS" Type="Edm.String" Nullable="false" />
+        <Property Name="DisplayProductNumber" Type="Edm.String" />
+        <Property Name="ProductType" Type="Edm.String" Nullable="false" />
+        <Property Name="EcoResTranslation_Name" Type="Edm.String" />
+        <Property Name="EcoResTranslation_LanguageId" Type="Edm.String" />
+        <Property Name="InventInvent_UnitId" Type="Edm.String" />
+        <Property Name="InventPurch_UnitId" Type="Edm.String" />
+        <Property Name="InventPurch_TaxItemGroupId" Type="Edm.String" />
+        <Property Name="InventSales_UnitId" Type="Edm.String" />
+        <Property Name="InventSales_TaxItemGroupId" Type="Edm.String" />
+        <Property Name="ExternalItem_ExternalItemId" Type="Edm.String" />
+        <Property Name="ExternalItem_CustVendRelation" Type="Edm.String" />
+        <Property Name="ReqGroupId" Type="Edm.String" />
+        <Property Name="MinInventOnHand" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ModelGroupId" Type="Edm.String" />
+        <Property Name="ItemGroupId" Type="Edm.String" />
+        <Property Name="EcoResProductSubtype" Type="Edm.String" Nullable="false" />
+        <Property Name="EcoResCategoryName" Type="Edm.String" />
+        <Property Name="Managed" Type="Edm.String" Nullable="false" />
+        <Property Name="Brand" Type="Edm.String" />
+        <Property Name="FredMolecule" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="ExternalItem_ModuleType" Type="Edm.String" Nullable="false" />
+        <Property Name="PrimaryVendorId" Type="Edm.String" />
+        <Property Name="Department" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PurchLine">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="AccountingDistributionTem_1" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ActivityNumber" Type="Edm.String" />
+        <Property Name="AddressRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AddressRefTableId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AgreementSkipAutoLink" Type="Edm.String" Nullable="false" />
+        <Property Name="AssetBookId" Type="Edm.String" />
+        <Property Name="AssetGroup" Type="Edm.String" />
+        <Property Name="AssetId" Type="Edm.String" />
+        <Property Name="AssetTransTypePurch" Type="Edm.String" Nullable="false" />
+        <Property Name="BarCode" Type="Edm.String" />
+        <Property Name="BarCodeType" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.String" Nullable="false" />
+        <Property Name="CaseTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="Complete" Type="Edm.String" Nullable="false" />
+        <Property Name="ConfirmedDlv" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ConfirmedTaxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ConfirmedTaxWriteCode" Type="Edm.String" />
+        <Property Name="CountyOrigDest" Type="Edm.String" />
+        <Property Name="CovRef" Type="Edm.String" Nullable="false" />
+        <Property Name="CreateFixedAsset" Type="Edm.String" Nullable="false" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="CustomerRef" Type="Edm.String" />
+        <Property Name="CustPurchaseOrderFormNum" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeliveryName" Type="Edm.String" />
+        <Property Name="DeliveryPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryType" Type="Edm.String" Nullable="false" />
+        <Property Name="DiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="EditableInWorkflow" Type="Edm.String" Nullable="false" />
+        <Property Name="ExternalItemId" Type="Edm.String" />
+        <Property Name="FredPharmXAltWarehouse" Type="Edm.String" Nullable="false" />
+        <Property Name="FredPharmXCondition" Type="Edm.String" />
+        <Property Name="FredPharmXInvoiceLineProc_37" Type="Edm.String" Nullable="false" />
+        <Property Name="FredPharmXMessage" Type="Edm.String" />
+        <Property Name="FredPharmXQtyBackordered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FredPharmXQtyOutOfStock" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FredPharmXShort" Type="Edm.String" Nullable="false" />
+        <Property Name="GSTHSTTaxType_CA" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyInventTransId_43" Type="Edm.String" />
+        <Property Name="InterCompanyOrigin" Type="Edm.String" Nullable="false" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="InventInvoiceNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventReceivedNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventRefId" Type="Edm.String" />
+        <Property Name="InventRefTransId" Type="Edm.String" />
+        <Property Name="InventTransId" Type="Edm.String" />
+        <Property Name="IsDeleted" Type="Edm.String" Nullable="false" />
+        <Property Name="IsFinalized" Type="Edm.String" Nullable="false" />
+        <Property Name="IsInvoiceMatched" Type="Edm.String" Nullable="false" />
+        <Property Name="IsModified" Type="Edm.String" Nullable="false" />
+        <Property Name="IsPwp" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemBOMId" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="itemPBAId" Type="Edm.String" />
+        <Property Name="ItemRefType" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemRouteId" Type="Edm.String" />
+        <Property Name="ItemTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="LedgerDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LineAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineDeliveryType" Type="Edm.String" Nullable="false" />
+        <Property Name="LineDisc" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineHeader" Type="Edm.String" />
+        <Property Name="LineNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LinePercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ManualEntryChangepolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ManualModifiedField" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MatchingAgreementLine" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MatchingPolicy" Type="Edm.String" Nullable="false" />
+        <Property Name="MCRDropShipComment" Type="Edm.String" />
+        <Property Name="MCRDropShipment" Type="Edm.String" Nullable="false" />
+        <Property Name="MCRDropShipStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="MCROrderLine2PriceHistory_77" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MultiLnDisc" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MultiLnPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="OverDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PalletTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="PDSCalculationId" Type="Edm.String" />
+        <Property Name="PdsCWInventReceivedNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWRemainInventFinancia_89" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWRemainInventPhysical_90" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PlanReference" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Port" Type="Edm.String" />
+        <Property Name="PriceUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProcurementCategory" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ProjCategoryId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="ProjLinePropertyId" Type="Edm.String" />
+        <Property Name="ProjSalesCurrencyId" Type="Edm.String" />
+        <Property Name="ProjSalesPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProjSalesUnitId" Type="Edm.String" />
+        <Property Name="ProjTaxGroupId" Type="Edm.String" />
+        <Property Name="ProjTaxItemGroupId" Type="Edm.String" />
+        <Property Name="ProjTransId" Type="Edm.String" />
+        <Property Name="ProjWorker" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PSARetainScheduleId" Type="Edm.String" />
+        <Property Name="PSATotalRetainAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchaseType" Type="Edm.String" Nullable="false" />
+        <Property Name="PurchCommitmentLine_PSN" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PurchId" Type="Edm.String" />
+        <Property Name="PurchMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchReceivedNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchReqId" Type="Edm.String" />
+        <Property Name="PurchReqLineRefId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PurchStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="PurchUnit" Type="Edm.String" />
+        <Property Name="QtyOrdered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RBOPackageLineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Remainder" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainInventFinancial" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainInventPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainPurchFinancial" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainPurchPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReqAttention" Type="Edm.String" />
+        <Property Name="ReqPlanIdSched" Type="Edm.String" />
+        <Property Name="ReqPOId" Type="Edm.String" />
+        <Property Name="Requester" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RetailLineNumEx1" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetailPackageId" Type="Edm.String" />
+        <Property Name="RetailTempValueEx2" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReturnActionId" Type="Edm.String" />
+        <Property Name="ReturnDispositionCodeId" Type="Edm.String" />
+        <Property Name="ReturnStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="Scrap" Type="Edm.String" Nullable="false" />
+        <Property Name="ServiceAddress" Type="Edm.String" />
+        <Property Name="ServiceDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SkipDistributionUpdate" Type="Edm.String" Nullable="false" />
+        <Property Name="SkipUpdate" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceDocumentLine" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StatisticValue_LT" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="StatProcId" Type="Edm.String" />
+        <Property Name="StatTriangularDeal" Type="Edm.String" Nullable="false" />
+        <Property Name="StockedProduct" Type="Edm.String" Nullable="false" />
+        <Property Name="SystemEntryChangePolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SystemEntrySource" Type="Edm.String" Nullable="false" />
+        <Property Name="TAMItemVendRebateGroupId" Type="Edm.String" />
+        <Property Name="Tax1099Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Tax1099Fields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Tax1099RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Tax1099State" Type="Edm.String" />
+        <Property Name="Tax1099StateAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TaxAutogenerated" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxItemGroup" Type="Edm.String" />
+        <Property Name="TaxWithholdItemGroupHeadi_161" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TransactionCode" Type="Edm.String" />
+        <Property Name="Transport" Type="Edm.String" />
+        <Property Name="UnderDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="VariantId" Type="Edm.String" />
+        <Property Name="VendAccount" Type="Edm.String" />
+        <Property Name="VendGroup" Type="Edm.String" />
+        <Property Name="WfDeliveryDueState" Type="Edm.String" Nullable="false" />
+        <Property Name="WfInvReceivedState" Type="Edm.String" Nullable="false" />
+        <Property Name="WorkflowState" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="FredPharmXNonSupplyReason" Type="Edm.String" />
+        <Property Name="FredPharmXNonSupplyReasonDescription" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PurchTable">
+        <Key>
+          <PropertyRef Name="PurchId" />
+        </Key>
+        <Property Name="AccountingDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="AccountingDistributionTem_2" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AddressRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AddressRefTableId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AutoSummaryModuleType" Type="Edm.String" Nullable="false" />
+        <Property Name="AvailSalesDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="BankDocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="CashDisc" Type="Edm.String" />
+        <Property Name="CashDiscPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ChangeRequestRequired" Type="Edm.String" Nullable="false" />
+        <Property Name="ConfirmedDlv" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ConfirmedDlvEarliest" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ConfirmingPO" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ContactPersonId" Type="Edm.String" />
+        <Property Name="ContractNum_SA" Type="Edm.String" />
+        <Property Name="CountyOrigDest" Type="Edm.String" />
+        <Property Name="CovStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CrossDockingDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeliveryName" Type="Edm.String" />
+        <Property Name="DeliveryPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryType" Type="Edm.String" Nullable="false" />
+        <Property Name="DiscPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="DlvTerm" Type="Edm.String" />
+        <Property Name="DocumentState" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="EndDisc" Type="Edm.String" />
+        <Property Name="EnterpriseNumber" Type="Edm.String" />
+        <Property Name="ExchangeRateDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FinalizeClosingDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FixedDueDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FixedExchRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FredPharmxAccountNumber" Type="Edm.String" />
+        <Property Name="FredPharmXInvoiceReceived_41" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FredPharmXLastOrderDetail_42" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FredPharmXLastOutOfStockU_43" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FredPharmXMessage" Type="Edm.String" />
+        <Property Name="FredPharmXOrderId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FredPharmXSendDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FredPharmXSendStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="FredPharmXStatusTxt" Type="Edm.String" />
+        <Property Name="FredPharmXSupplier" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FreightSlipType" Type="Edm.String" Nullable="false" />
+        <Property Name="FreightZone" Type="Edm.String" />
+        <Property Name="FSHAutoCreated" Type="Edm.String" Nullable="false" />
+        <Property Name="InclTax" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAllowIndirect_54" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyCompanyId" Type="Edm.String" />
+        <Property Name="InterCompanyCustPurchOrde_56" Type="Edm.String" />
+        <Property Name="InterCompanyDirectDeliver_57" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOrder" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOrigin" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOriginalCustA_60" Type="Edm.String" />
+        <Property Name="InterCompanyOriginalSales_61" Type="Edm.String" />
+        <Property Name="InterCompanySalesId" Type="Edm.String" />
+        <Property Name="IntrastatAddValue_LV" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventLocationId" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InvoiceAccount" Type="Edm.String" />
+        <Property Name="IsEncumbranceRequired" Type="Edm.String" Nullable="false" />
+        <Property Name="IsModified" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemBuyerGroupId" Type="Edm.String" />
+        <Property Name="LanguageId" Type="Edm.String" />
+        <Property Name="LineDisc" Type="Edm.String" />
+        <Property Name="ListCode" Type="Edm.String" Nullable="false" />
+        <Property Name="LocalDeliveryDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ManualEntryChangepolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MarkupGroup" Type="Edm.String" />
+        <Property Name="MatchingAgreement" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MCRDropShipment" Type="Edm.String" Nullable="false" />
+        <Property Name="MultiLineDisc" Type="Edm.String" />
+        <Property Name="NumberSequenceGroup" Type="Edm.String" />
+        <Property Name="OneTimeSupplier" Type="Edm.String" Nullable="false" />
+        <Property Name="OneTimeVendor" Type="Edm.String" Nullable="false" />
+        <Property Name="OrderAccount" Type="Edm.String" />
+        <Property Name="Payment" Type="Edm.String" />
+        <Property Name="PaymentSched" Type="Edm.String" />
+        <Property Name="PaymMode" Type="Edm.String" />
+        <Property Name="PaymSpec" Type="Edm.String" />
+        <Property Name="Port" Type="Edm.String" />
+        <Property Name="PostingProfile" Type="Edm.String" />
+        <Property Name="PriceGroupId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="PurchaseType" Type="Edm.String" Nullable="false" />
+        <Property Name="PurchId" Type="Edm.String" Nullable="false" />
+        <Property Name="PurchName" Type="Edm.String" />
+        <Property Name="PurchPoolId" Type="Edm.String" />
+        <Property Name="PurchStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="ReasonTableRef" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReceiptDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReplenishmentLocation" Type="Edm.String" />
+        <Property Name="ReqAttention" Type="Edm.String" />
+        <Property Name="Requester" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RetailConcessionPurch" Type="Edm.String" Nullable="false" />
+        <Property Name="RetailDriverDetails" Type="Edm.String" />
+        <Property Name="RetailRetailStatusType" Type="Edm.String" Nullable="false" />
+        <Property Name="ReturnItemNum" Type="Edm.String" />
+        <Property Name="ReturnReasonCodeId" Type="Edm.String" />
+        <Property Name="ReturnReplacementCreated" Type="Edm.String" Nullable="false" />
+        <Property Name="ServiceAddress" Type="Edm.String" />
+        <Property Name="ServiceCategory" Type="Edm.String" />
+        <Property Name="ServiceDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ServiceName" Type="Edm.String" />
+        <Property Name="SettleVoucher" Type="Edm.String" Nullable="false" />
+        <Property Name="ShippingDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SkipUpdate" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceDocumentHeader" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SourceDocumentLine" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StatProcId" Type="Edm.String" />
+        <Property Name="SystemEntryChangePolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SystemEntrySource" Type="Edm.String" Nullable="false" />
+        <Property Name="TAMVendRebateGroupId" Type="Edm.String" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TransactionCode" Type="Edm.String" />
+        <Property Name="Transport" Type="Edm.String" />
+        <Property Name="TransportationDocument" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UnitedVATInvoice_LT" Type="Edm.String" Nullable="false" />
+        <Property Name="URL" Type="Edm.String" />
+        <Property Name="VATNum" Type="Edm.String" />
+        <Property Name="VendGroup" Type="Edm.String" />
+        <Property Name="VendInvoiceDeclaration_IS_134" Type="Edm.Int64" Nullable="false" />
+        <Property Name="VendorRef" Type="Edm.String" />
+        <Property Name="WorkerPurchPlacer" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LastPackingSlipId" Type="Edm.String" />
+        <Property Name="LastInvoiceId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <NavigationProperty Name="PurchLines" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_PurchTable_PurchLines_FredNXT_Web_Model_PurchLine_PurchLinesPartner" ToRole="PurchLines" FromRole="PurchLinesPartner" />
+      </EntityType>
+      <EntityType Name="RetailInventTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="BarcodeSetupId" Type="Edm.String" />
+        <Property Name="baseComparisonUnitCode" Type="Edm.String" />
+        <Property Name="blockedOnPOS" Type="Edm.String" Nullable="false" />
+        <Property Name="ConcessionContractItem" Type="Edm.String" Nullable="false" />
+        <Property Name="concessionVendAccount" Type="Edm.String" />
+        <Property Name="dateBlocked" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="dateToActivateItem" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="dateToBeBlocked" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FredHideFromCustomer" Type="Edm.String" Nullable="false" />
+        <Property Name="itemId" Type="Edm.String" />
+        <Property Name="keyingInPrice" Type="Edm.String" Nullable="false" />
+        <Property Name="keyingInQty" Type="Edm.String" Nullable="false" />
+        <Property Name="lifeFrom" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="lifeTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="mustKeyInComment" Type="Edm.String" Nullable="false" />
+        <Property Name="noDiscountAllowed" Type="Edm.String" Nullable="false" />
+        <Property Name="PrintVariantsShelfLabels" Type="Edm.String" Nullable="false" />
+        <Property Name="qtyBecomesNegative" Type="Edm.String" Nullable="false" />
+        <Property Name="scaleItem" Type="Edm.String" Nullable="false" />
+        <Property Name="seasonCode" Type="Edm.String" />
+        <Property Name="useEanStandardBarcode" Type="Edm.String" Nullable="false" />
+        <Property Name="zeroPriceValid" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="RetailTransactionDiscountTrans">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="Amount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Channel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CustomerDiscountType" Type="Edm.String" Nullable="false" />
+        <Property Name="DealPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DiscountCode" Type="Edm.String" />
+        <Property Name="DiscountOriginType" Type="Edm.String" Nullable="false" />
+        <Property Name="LineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ManualDiscountType" Type="Edm.String" Nullable="false" />
+        <Property Name="Origin" Type="Edm.String" />
+        <Property Name="Percentage" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PeriodicDiscountOfferId" Type="Edm.String" />
+        <Property Name="ReplicationCounterFromOri_13" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SaleLineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="TerminalId" Type="Edm.String" />
+        <Property Name="TransactionId" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="RetailTransactionPaymentTrans">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="amountCur" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="amountMST" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="amountTendered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="authenticationCode" Type="Edm.String" />
+        <Property Name="businessDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="cardOrAccount" Type="Edm.String" />
+        <Property Name="cardTypeId" Type="Edm.String" />
+        <Property Name="changeLine" Type="Edm.String" Nullable="false" />
+        <Property Name="Channel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="counter" Type="Edm.Int32" Nullable="false" />
+        <Property Name="creditVoucherId" Type="Edm.String" />
+        <Property Name="currency" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="exchRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="exchRateMST" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="giftCardId" Type="Edm.String" />
+        <Property Name="IsCaptureFailed" Type="Edm.String" Nullable="false" />
+        <Property Name="isPrepayment" Type="Edm.String" Nullable="false" />
+        <Property Name="lineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="loyaltyCardId" Type="Edm.String" />
+        <Property Name="managerKeyLive" Type="Edm.String" Nullable="false" />
+        <Property Name="messageNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Origin" Type="Edm.String" />
+        <Property Name="paymentAuthorization" Type="Edm.String" />
+        <Property Name="qty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="receiptId" Type="Edm.String" />
+        <Property Name="replicated" Type="Edm.String" Nullable="false" />
+        <Property Name="replicationCounterFromOri_29" Type="Edm.Int32" Nullable="false" />
+        <Property Name="shift" Type="Edm.String" />
+        <Property Name="shiftDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="sigCapData" Type="Edm.String" />
+        <Property Name="staff" Type="Edm.String" />
+        <Property Name="statementCode" Type="Edm.String" />
+        <Property Name="statementId" Type="Edm.String" />
+        <Property Name="store" Type="Edm.String" />
+        <Property Name="tenderType" Type="Edm.String" />
+        <Property Name="terminal" Type="Edm.String" />
+        <Property Name="transactionId" Type="Edm.String" />
+        <Property Name="transactionStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="transDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="transTime" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="RetailTransactionSalesTrans">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="barcode" Type="Edm.String" />
+        <Property Name="BlockQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="businessDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Catalog" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CategoryId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Channel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="comment" Type="Edm.String" />
+        <Property Name="ConcessionContractId" Type="Edm.String" />
+        <Property Name="ConcessionSettlementId" Type="Edm.String" />
+        <Property Name="ConsessionPartPaymentId" Type="Edm.String" />
+        <Property Name="costAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="counter" Type="Edm.Int32" Nullable="false" />
+        <Property Name="currency" Type="Edm.String" />
+        <Property Name="custAccount" Type="Edm.String" />
+        <Property Name="custDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="custInvoiceDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="discAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="discAmountFromStdPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="discGroupId" Type="Edm.String" />
+        <Property Name="discOfferId" Type="Edm.String" />
+        <Property Name="DiscountAmountForPrinting_22" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="ElectronicDeliveryEmail" Type="Edm.String" />
+        <Property Name="ElectronicDeliveryEmailCo_25" Type="Edm.String" />
+        <Property Name="FileLogId" Type="Edm.String" />
+        <Property Name="giftcard" Type="Edm.String" Nullable="false" />
+        <Property Name="infocodeDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventBatchId" Type="Edm.String" />
+        <Property Name="inventDimId" Type="Edm.String" />
+        <Property Name="InventLocationId" Type="Edm.String" />
+        <Property Name="InventSerialId" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="inventStatusSales" Type="Edm.String" Nullable="false" />
+        <Property Name="inventTransId" Type="Edm.String" />
+        <Property Name="itemCorrectedLine" Type="Edm.String" Nullable="false" />
+        <Property Name="itemId" Type="Edm.String" />
+        <Property Name="itemIdScanned" Type="Edm.String" Nullable="false" />
+        <Property Name="itemPostingGroup" Type="Edm.String" />
+        <Property Name="keyboardItemEntry" Type="Edm.String" Nullable="false" />
+        <Property Name="lineDscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineManualDiscountAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineManualDiscountPercent_43" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="lineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="lineWasDiscounted" Type="Edm.String" Nullable="false" />
+        <Property Name="linkedItemNotOriginal" Type="Edm.String" Nullable="false" />
+        <Property Name="ListingId" Type="Edm.String" />
+        <Property Name="LogisticsPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="netAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="netAmountInclTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="netPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Origin" Type="Edm.String" />
+        <Property Name="originalOfLinkedItemList" Type="Edm.String" Nullable="false" />
+        <Property Name="originalPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OriginalTaxGroup" Type="Edm.String" />
+        <Property Name="OriginalTaxItemGroup" Type="Edm.String" />
+        <Property Name="periodicDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="periodicDiscGroup" Type="Edm.String" />
+        <Property Name="periodicDiscType" Type="Edm.String" Nullable="false" />
+        <Property Name="PeriodicPercentageDiscoun_62" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="prescriptionId" Type="Edm.String" />
+        <Property Name="price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="priceChange" Type="Edm.String" Nullable="false" />
+        <Property Name="priceInBarcode" Type="Edm.String" Nullable="false" />
+        <Property Name="pumpId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="purchId" Type="Edm.String" />
+        <Property Name="qty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReceiptDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="receiptId" Type="Edm.String" />
+        <Property Name="replicated" Type="Edm.String" Nullable="false" />
+        <Property Name="replicationCounterFromOri_73" Type="Edm.Int32" Nullable="false" />
+        <Property Name="returnLineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="returnNoSale" Type="Edm.String" Nullable="false" />
+        <Property Name="returnQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="returnStore" Type="Edm.String" />
+        <Property Name="returnTerminalId" Type="Edm.String" />
+        <Property Name="returnTransactionId" Type="Edm.String" />
+        <Property Name="RFIDTagId" Type="Edm.String" />
+        <Property Name="scaleItem" Type="Edm.String" Nullable="false" />
+        <Property Name="section" Type="Edm.String" />
+        <Property Name="shelf" Type="Edm.String" />
+        <Property Name="shift" Type="Edm.String" />
+        <Property Name="shiftDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="staffId" Type="Edm.String" />
+        <Property Name="statementCode" Type="Edm.String" />
+        <Property Name="statementId" Type="Edm.String" />
+        <Property Name="stdNetPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="store" Type="Edm.String" />
+        <Property Name="taxAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="taxGroup" Type="Edm.String" />
+        <Property Name="TaxItemGroup" Type="Edm.String" />
+        <Property Name="terminalId" Type="Edm.String" />
+        <Property Name="totalDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="totalDiscInfoCodeLineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="totalDiscPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="totalRoundedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="transactionCode" Type="Edm.String" Nullable="false" />
+        <Property Name="transactionId" Type="Edm.String" />
+        <Property Name="transactionStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="transDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="transTime" Type="Edm.Int32" Nullable="false" />
+        <Property Name="unit" Type="Edm.String" />
+        <Property Name="unitPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="unitQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="variantId" Type="Edm.String" />
+        <Property Name="weightItem" Type="Edm.String" Nullable="false" />
+        <Property Name="weightManuallyEntered" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="discountReason" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="RetailTransactionTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="amountToAccount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BatchID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="BatchTerminalId" Type="Edm.String" />
+        <Property Name="businessDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Channel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ChannelReferenceId" Type="Edm.String" />
+        <Property Name="comment" Type="Edm.String" />
+        <Property Name="costAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="counter" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedOffline" Type="Edm.String" Nullable="false" />
+        <Property Name="createdOnPosTerminal" Type="Edm.String" />
+        <Property Name="currency" Type="Edm.String" />
+        <Property Name="custAccount" Type="Edm.String" />
+        <Property Name="custDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustPurchaseOrder" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="discAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="entryStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="exchRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FiscalDocumentId" Type="Edm.String" />
+        <Property Name="FiscalSerialId" Type="Edm.String" />
+        <Property Name="grossAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="includedInStatistics" Type="Edm.String" Nullable="false" />
+        <Property Name="incomeExpenseAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="infocodeDiscGroup" Type="Edm.String" />
+        <Property Name="InventLocationId" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InvoiceComment" Type="Edm.String" />
+        <Property Name="invoiceId" Type="Edm.String" />
+        <Property Name="itemsPosted" Type="Edm.String" Nullable="false" />
+        <Property Name="LogisticsPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="loyaltyCardId" Type="Edm.String" />
+        <Property Name="netAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="numberOfInvoices" Type="Edm.Int32" Nullable="false" />
+        <Property Name="numberOfItemLines" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="numberOfItems" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="numberOfPaymentLines" Type="Edm.Int32" Nullable="false" />
+        <Property Name="openDrawer" Type="Edm.String" Nullable="false" />
+        <Property Name="Origin" Type="Edm.String" />
+        <Property Name="paymentAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="postAsShipment" Type="Edm.String" Nullable="false" />
+        <Property Name="ReceiptDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="receiptEmail" Type="Edm.String" />
+        <Property Name="receiptEmailSent" Type="Edm.String" Nullable="false" />
+        <Property Name="receiptId" Type="Edm.String" />
+        <Property Name="refundReceiptId" Type="Edm.String" />
+        <Property Name="replicated" Type="Edm.String" Nullable="false" />
+        <Property Name="replicationCounterFromOri_51" Type="Edm.Int32" Nullable="false" />
+        <Property Name="retrievedFromReceiptId" Type="Edm.String" />
+        <Property Name="roundedAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="saleIsReturnSale" Type="Edm.String" Nullable="false" />
+        <Property Name="salesInvoiceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="salesOrderAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="salesOrderId" Type="Edm.String" />
+        <Property Name="salesPaymentDifference" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="sellToContactId" Type="Edm.String" />
+        <Property Name="shift" Type="Edm.String" />
+        <Property Name="shiftDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SkipAggregation" Type="Edm.String" Nullable="false" />
+        <Property Name="staff" Type="Edm.String" />
+        <Property Name="statementCode" Type="Edm.String" />
+        <Property Name="statementId" Type="Edm.String" />
+        <Property Name="store" Type="Edm.String" />
+        <Property Name="terminal" Type="Edm.String" />
+        <Property Name="toAccount" Type="Edm.String" Nullable="false" />
+        <Property Name="totalDiscAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalManualDiscountAmount_73" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="TotalManualDiscountPercen_74" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="transactionId" Type="Edm.String" />
+        <Property Name="transCode" Type="Edm.String" Nullable="false" />
+        <Property Name="transDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="transTime" Type="Edm.Int32" Nullable="false" />
+        <Property Name="transTableId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="type" Type="Edm.String" Nullable="false" />
+        <Property Name="wrongShift" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SalesLine">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="ActivityNumber" Type="Edm.String" />
+        <Property Name="AddressRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AddressRefTableId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AgreementSkipAutoLink" Type="Edm.String" Nullable="false" />
+        <Property Name="BarCode" Type="Edm.String" />
+        <Property Name="BarCodeType" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.String" Nullable="false" />
+        <Property Name="CaseTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="Complete" Type="Edm.String" Nullable="false" />
+        <Property Name="ConfirmedDlv" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CostPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CountyOrigDest" Type="Edm.String" />
+        <Property Name="CreditNoteReasonCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="CustAccount" Type="Edm.String" />
+        <Property Name="CustGroup" Type="Edm.String" />
+        <Property Name="CustomerLineNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CustomerRef" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryDateControlType" Type="Edm.String" Nullable="false" />
+        <Property Name="DeliveryName" Type="Edm.String" />
+        <Property Name="DeliveryPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryType" Type="Edm.String" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="DlvTerm" Type="Edm.String" />
+        <Property Name="EInvoiceAccountCode" Type="Edm.String" />
+        <Property Name="ExpectedRetQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExternalItemId" Type="Edm.String" />
+        <Property Name="InterCompanyInventTransId_37" Type="Edm.String" />
+        <Property Name="InterCompanyOrigin" Type="Edm.String" Nullable="false" />
+        <Property Name="InventDeliverNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventDimId" Type="Edm.String" />
+        <Property Name="InventRefId" Type="Edm.String" />
+        <Property Name="InventRefTransId" Type="Edm.String" />
+        <Property Name="InventRefType" Type="Edm.String" Nullable="false" />
+        <Property Name="InventTransId" Type="Edm.String" />
+        <Property Name="InventTransIdReturn" Type="Edm.String" />
+        <Property Name="ItemBOMId" Type="Edm.String" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="ItemPBAId" Type="Edm.String" />
+        <Property Name="ItemReplaced" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemRouteId" Type="Edm.String" />
+        <Property Name="ItemTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="LedgerDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LineAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineDeliveryType" Type="Edm.String" Nullable="false" />
+        <Property Name="LineDisc" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LineHeader" Type="Edm.String" />
+        <Property Name="LineNum" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="LinePercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ManualEntryChangepolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MatchingAgreementLine" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MCROrderLine2PriceHistory_63" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MultiLnDisc" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MultiLnPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="OverDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PackingUnit" Type="Edm.String" />
+        <Property Name="PackingUnitQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PalletTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsBatchAttribAutoRes" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsCWExpectedRetQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWInventDeliverNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWRemainInventFinancia_77" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsCWRemainInventPhysical_78" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PdsExcludeFromRebate" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsItemRebateGroupId" Type="Edm.String" />
+        <Property Name="PdsSameLot" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsSameLotOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="Port" Type="Edm.String" />
+        <Property Name="PriceUnit" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProjCategoryId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="ProjLinePropertyId" Type="Edm.String" />
+        <Property Name="ProjTransId" Type="Edm.String" />
+        <Property Name="PSAContractLineNum" Type="Edm.String" />
+        <Property Name="PSAProjProposalInventQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PSAProjProposalQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PurchorderFormNum" Type="Edm.String" />
+        <Property Name="QtyOrdered" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ReceiptDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReceiptDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="RefReturnInvoiceTrans_W" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RemainInventFinancial" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainInventPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainSalesFinancial" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RemainSalesPhysical" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Reservation" Type="Edm.String" Nullable="false" />
+        <Property Name="RetailBlockQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RetailVariantId" Type="Edm.String" />
+        <Property Name="ReturnAllowReservation" Type="Edm.String" Nullable="false" />
+        <Property Name="ReturnArrivalDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReturnClosedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReturnDeadline" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReturnDispositionCodeId" Type="Edm.String" />
+        <Property Name="ReturnStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesCategory" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SalesDeliverNow" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesGroup" Type="Edm.String" />
+        <Property Name="SalesId" Type="Edm.String" />
+        <Property Name="SalesMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesQty" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SalesStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesType" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesUnit" Type="Edm.String" />
+        <Property Name="Scrap" Type="Edm.String" Nullable="false" />
+        <Property Name="ScriptID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ServiceOrderId" Type="Edm.String" />
+        <Property Name="ShipCarrierAccount" Type="Edm.String" />
+        <Property Name="ShipCarrierAccountCode" Type="Edm.String" />
+        <Property Name="ShipCarrierDlvType" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierId" Type="Edm.String" />
+        <Property Name="ShipCarrierName" Type="Edm.String" />
+        <Property Name="ShipCarrierPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ShippingDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SkipUpdate" Type="Edm.String" Nullable="false" />
+        <Property Name="SourceDocumentLine" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StatisticValue_LT" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="StatProcId" Type="Edm.String" />
+        <Property Name="StatTriangularDeal" Type="Edm.String" Nullable="false" />
+        <Property Name="StockedProduct" Type="Edm.String" Nullable="false" />
+        <Property Name="SystemEntryChangePolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SystemEntrySource" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxAutogenerated" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxItemGroup" Type="Edm.String" />
+        <Property Name="TaxWithholdItemGroupHeadi_146" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TransactionCode" Type="Edm.String" />
+        <Property Name="Transport" Type="Edm.String" />
+        <Property Name="UnderDeliveryPct" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SalesTable">
+        <Key>
+          <PropertyRef Name="SalesId" />
+        </Key>
+        <Property Name="AddressRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="AddressRefTableId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AutoSummaryModuleType" Type="Edm.String" Nullable="false" />
+        <Property Name="BankDocumentType" Type="Edm.String" Nullable="false" />
+        <Property Name="CaseTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="CashDisc" Type="Edm.String" />
+        <Property Name="CashDiscBaseDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CashDiscBaseDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CashDiscPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CommissionGroup" Type="Edm.String" />
+        <Property Name="ContactPersonId" Type="Edm.String" />
+        <Property Name="CountyOrigDest" Type="Edm.String" />
+        <Property Name="CovStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreditCardApprovalAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditCardAuthorization" Type="Edm.String" />
+        <Property Name="CreditCardAuthorizationEr_20" Type="Edm.String" Nullable="false" />
+        <Property Name="CreditCardCustRefId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreditNoteReasonCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="CustAccount" Type="Edm.String" />
+        <Property Name="CustGroup" Type="Edm.String" />
+        <Property Name="CustInvoiceId" Type="Edm.String" />
+        <Property Name="CustomerRef" Type="Edm.String" />
+        <Property Name="DAXIntegrationID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Deadline" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DeliveryDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeliveryDateControlType" Type="Edm.String" Nullable="false" />
+        <Property Name="DeliveryName" Type="Edm.String" />
+        <Property Name="DeliveryPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DirectDebitMandate" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DiscPercent" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="DlvReason" Type="Edm.String" />
+        <Property Name="DlvTerm" Type="Edm.String" />
+        <Property Name="DocumentStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="EInvoiceAccountCode" Type="Edm.String" />
+        <Property Name="EInvoiceLineSpec" Type="Edm.String" Nullable="false" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="EndDisc" Type="Edm.String" />
+        <Property Name="EnterpriseNumber" Type="Edm.String" />
+        <Property Name="Estimate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExportReason" Type="Edm.String" />
+        <Property Name="FixedDueDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FixedExchRate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FreightSlipType" Type="Edm.String" Nullable="false" />
+        <Property Name="FreightZone" Type="Edm.String" />
+        <Property Name="GiroType" Type="Edm.String" Nullable="false" />
+        <Property Name="InclTax" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAllowIndirect_59" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAllowIndirect_60" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyAutoCreateOrd_61" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyCompanyId" Type="Edm.String" />
+        <Property Name="InterCompanyDirectDeliver_63" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyDirectDeliver_64" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOrder" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOrigin" Type="Edm.String" Nullable="false" />
+        <Property Name="InterCompanyOriginalCustA_67" Type="Edm.String" />
+        <Property Name="InterCompanyOriginalSales_68" Type="Edm.String" />
+        <Property Name="InterCompanyPurchId" Type="Edm.String" />
+        <Property Name="IntrastatAddValue_LV" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="InventLocationId" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InvoiceAccount" Type="Edm.String" />
+        <Property Name="ItemTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="LanguageId" Type="Edm.String" />
+        <Property Name="LineDisc" Type="Edm.String" />
+        <Property Name="Listcode" Type="Edm.String" Nullable="false" />
+        <Property Name="ManualEntryChangepolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MarkupGroup" Type="Edm.String" />
+        <Property Name="MatchingAgreement" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MCROrderStopped" Type="Edm.String" Nullable="false" />
+        <Property Name="MultiLineDisc" Type="Edm.String" />
+        <Property Name="NumberSequenceGroup" Type="Edm.String" />
+        <Property Name="OneTimeCustomer" Type="Edm.String" Nullable="false" />
+        <Property Name="PalletTagging" Type="Edm.String" Nullable="false" />
+        <Property Name="Payment" Type="Edm.String" />
+        <Property Name="PaymentSched" Type="Edm.String" />
+        <Property Name="PaymMode" Type="Edm.String" />
+        <Property Name="PaymSpec" Type="Edm.String" />
+        <Property Name="PdsBatchAttribAutoRes" Type="Edm.String" Nullable="false" />
+        <Property Name="PdsCustRebateGroupId" Type="Edm.String" />
+        <Property Name="PdsRebateProgramTMAGroup" Type="Edm.String" />
+        <Property Name="Port" Type="Edm.String" />
+        <Property Name="PostingProfile" Type="Edm.String" />
+        <Property Name="PriceGroupId" Type="Edm.String" />
+        <Property Name="ProjId" Type="Edm.String" />
+        <Property Name="PurchId" Type="Edm.String" />
+        <Property Name="PurchOrderFormNum" Type="Edm.String" />
+        <Property Name="QuotationId" Type="Edm.String" />
+        <Property Name="ReceiptDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReceiptDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReleaseStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="Reservation" Type="Edm.String" Nullable="false" />
+        <Property Name="ReturnDeadline" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ReturnItemNum" Type="Edm.String" />
+        <Property Name="ReturnReasonCodeId" Type="Edm.String" />
+        <Property Name="ReturnReplacementCreated" Type="Edm.String" Nullable="false" />
+        <Property Name="ReturnReplacementId" Type="Edm.String" />
+        <Property Name="ReturnStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesGroup" Type="Edm.String" />
+        <Property Name="SalesId" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesName" Type="Edm.String" />
+        <Property Name="SalesOriginId" Type="Edm.String" />
+        <Property Name="SalesPoolId" Type="Edm.String" />
+        <Property Name="SalesStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesType" Type="Edm.String" Nullable="false" />
+        <Property Name="SalesUnitId" Type="Edm.String" />
+        <Property Name="SettleVoucher" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierAccount" Type="Edm.String" />
+        <Property Name="ShipCarrierAccountCode" Type="Edm.String" />
+        <Property Name="ShipCarrierBlindShipment" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierDeliveryContac_128" Type="Edm.String" />
+        <Property Name="ShipCarrierDlvType" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierExpeditedShipm_130" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierFuelSurcharge" Type="Edm.String" Nullable="false" />
+        <Property Name="ShipCarrierId" Type="Edm.String" />
+        <Property Name="ShipCarrierName" Type="Edm.String" />
+        <Property Name="ShipCarrierPostalAddress" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ShipCarrierResidential" Type="Edm.String" Nullable="false" />
+        <Property Name="ShippingDateConfirmed" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ShippingDateRequested" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SkipUpdate" Type="Edm.String" Nullable="false" />
+        <Property Name="smmCampaignId" Type="Edm.String" />
+        <Property Name="smmSalesAmountTotal" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SourceDocumentHeader" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StatProcId" Type="Edm.String" />
+        <Property Name="SystemEntryChangePolicy" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SystemEntrySource" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="Touched" Type="Edm.String" Nullable="false" />
+        <Property Name="TransactionCode" Type="Edm.String" />
+        <Property Name="Transport" Type="Edm.String" />
+        <Property Name="TransportationDocument" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UnitedVATInvoice_LT" Type="Edm.String" Nullable="false" />
+        <Property Name="URL" Type="Edm.String" />
+        <Property Name="VATNum" Type="Edm.String" />
+        <Property Name="WorkerSalesResponsible" Type="Edm.Int64" Nullable="false" />
+        <Property Name="WorkerSalesTaker" Type="Edm.Int64" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <NavigationProperty Name="SalesLines" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_SalesTable_SalesLines_FredNXT_Web_Model_SalesLine_SalesLinesPartner" ToRole="SalesLines" FromRole="SalesLinesPartner" />
+      </EntityType>
+      <EntityType Name="TaxOnItem">
+        <Key>
+          <PropertyRef Name="TaxCode" />
+        </Key>
+        <Property Name="TaxItemGroup" Type="Edm.String" />
+        <Property Name="TaxCode" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="VendTable">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="AccountNum" Type="Edm.String" />
+        <Property Name="ACVendorCatalogueId" Type="Edm.String" />
+        <Property Name="BankAccount" Type="Edm.String" />
+        <Property Name="BankCentralBankPurposeCod_4" Type="Edm.String" />
+        <Property Name="BankCentralBankPurposeTex_5" Type="Edm.String" />
+        <Property Name="BidOnly" Type="Edm.String" Nullable="false" />
+        <Property Name="BirthCountyCode_IT" Type="Edm.String" />
+        <Property Name="Blocked" Type="Edm.String" Nullable="false" />
+        <Property Name="BlockedReleaseDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CashAccountingRegime_ES" Type="Edm.String" Nullable="false" />
+        <Property Name="CashDisc" Type="Edm.String" />
+        <Property Name="ChangeRequestAllowOverrid_17" Type="Edm.String" Nullable="false" />
+        <Property Name="ChangeRequestEnabled" Type="Edm.String" Nullable="false" />
+        <Property Name="ChangeRequestOverride" Type="Edm.String" Nullable="false" />
+        <Property Name="ClearingPeriod" Type="Edm.String" />
+        <Property Name="CommercialRegister" Type="Edm.String" />
+        <Property Name="CommercialRegisterInsetNu_30" Type="Edm.String" />
+        <Property Name="CommercialRegisterSection_31" Type="Edm.String" />
+        <Property Name="CompanyChainId" Type="Edm.String" />
+        <Property Name="CompanyIdSiret" Type="Edm.String" />
+        <Property Name="CompanyNAFCode" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ContactPersonId" Type="Edm.String" />
+        <Property Name="CreditMax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CreditRating" Type="Edm.String" />
+        <Property Name="Currency" Type="Edm.String" />
+        <Property Name="DBA" Type="Edm.String" />
+        <Property Name="DefaultDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="DefaultInventStatusId" Type="Edm.String" />
+        <Property Name="DestinationCodeId" Type="Edm.String" />
+        <Property Name="DisabledOwned" Type="Edm.String" Nullable="false" />
+        <Property Name="DlvMode" Type="Edm.String" />
+        <Property Name="DlvTerm" Type="Edm.String" />
+        <Property Name="EndDisc" Type="Edm.String" />
+        <Property Name="EnterpriseCode" Type="Edm.String" />
+        <Property Name="EnterpriseNumber" Type="Edm.String" />
+        <Property Name="EthnicOriginId" Type="Edm.String" />
+        <Property Name="FactoringAccount" Type="Edm.String" />
+        <Property Name="FemaleOwned" Type="Edm.String" Nullable="false" />
+        <Property Name="FiscalCode" Type="Edm.String" />
+        <Property Name="ForeignEntityIndicator" Type="Edm.String" Nullable="false" />
+        <Property Name="FREDIsManufacturer" Type="Edm.String" Nullable="false" />
+        <Property Name="FreightZone" Type="Edm.String" />
+        <Property Name="Heir_IT" Type="Edm.String" Nullable="false" />
+        <Property Name="HUBZone" Type="Edm.String" Nullable="false" />
+        <Property Name="InclTax" Type="Edm.String" Nullable="false" />
+        <Property Name="InventLocation" Type="Edm.String" />
+        <Property Name="InventSiteId" Type="Edm.String" />
+        <Property Name="InvoiceAccount" Type="Edm.String" />
+        <Property Name="IsResident_LV" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemBuyerGroupId" Type="Edm.String" />
+        <Property Name="LineDisc" Type="Edm.String" />
+        <Property Name="LineOfBusinessId" Type="Edm.String" />
+        <Property Name="LocallyOwned" Type="Edm.String" Nullable="false" />
+        <Property Name="LvPaymTransCodes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MainContactWorker" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MarkupGroup" Type="Edm.String" />
+        <Property Name="MatchingPolicy" Type="Edm.String" Nullable="false" />
+        <Property Name="Memo" Type="Edm.String" />
+        <Property Name="MinorityOwned" Type="Edm.String" Nullable="false" />
+        <Property Name="MultiLineDisc" Type="Edm.String" />
+        <Property Name="NameControl" Type="Edm.String" />
+        <Property Name="numberSequenceGroup" Type="Edm.String" />
+        <Property Name="OffsetAccountType" Type="Edm.String" Nullable="false" />
+        <Property Name="OffsetLedgerDimension" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OneTimeVendor" Type="Edm.String" Nullable="false" />
+        <Property Name="OrganizationNumber" Type="Edm.String" />
+        <Property Name="OrgId" Type="Edm.String" />
+        <Property Name="Party" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PaymDayId" Type="Edm.String" />
+        <Property Name="PaymId" Type="Edm.String" />
+        <Property Name="PaymMode" Type="Edm.String" />
+        <Property Name="PaymSched" Type="Edm.String" />
+        <Property Name="PaymSpec" Type="Edm.String" />
+        <Property Name="PaymTermId" Type="Edm.String" />
+        <Property Name="PriceGroup" Type="Edm.String" />
+        <Property Name="PurchAmountPurchaseOrder" Type="Edm.String" Nullable="false" />
+        <Property Name="PurchCalendarId" Type="Edm.String" />
+        <Property Name="PurchPoolId" Type="Edm.String" />
+        <Property Name="SegmentId" Type="Edm.String" />
+        <Property Name="SmallBusiness" Type="Edm.String" Nullable="false" />
+        <Property Name="SubsegmentId" Type="Edm.String" />
+        <Property Name="SuppItemGroupId" Type="Edm.String" />
+        <Property Name="TAMRebateGroupID" Type="Edm.String" />
+        <Property Name="Tax1099Fields" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Tax1099NameChoice" Type="Edm.String" Nullable="false" />
+        <Property Name="Tax1099RegNum" Type="Edm.String" />
+        <Property Name="Tax1099Reports" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxGroup" Type="Edm.String" />
+        <Property Name="TaxIDType" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxWithholdCalculate" Type="Edm.String" Nullable="false" />
+        <Property Name="TaxWithholdGroup" Type="Edm.String" />
+        <Property Name="TaxWithholdVendorType_TH" Type="Edm.String" Nullable="false" />
+        <Property Name="UseCashDisc" Type="Edm.String" Nullable="false" />
+        <Property Name="VATNum" Type="Edm.String" />
+        <Property Name="VendExceptionGroup" Type="Edm.Int64" Nullable="false" />
+        <Property Name="VendGroup" Type="Edm.String" />
+        <Property Name="VendInvoiceDeclaration_IS_148" Type="Edm.Int64" Nullable="false" />
+        <Property Name="VendItemGroupId" Type="Edm.String" />
+        <Property Name="VendorPortalAdministrator_150" Type="Edm.Int64" Nullable="false" />
+        <Property Name="VendPriceToleranceGroupId_153" Type="Edm.String" />
+        <Property Name="VeteranOwned" Type="Edm.String" Nullable="false" />
+        <Property Name="W9" Type="Edm.String" Nullable="false" />
+        <Property Name="W9Included" Type="Edm.String" Nullable="false" />
+        <Property Name="YourAccountNum" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <NavigationProperty Name="PurchItems" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_PurchItems_FredNXT_Web_Model_PurchTable_PurchItemsPartner" ToRole="PurchItems" FromRole="PurchItemsPartner" />
+        <NavigationProperty Name="ContactDetails" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner" ToRole="ContactDetails" FromRole="ContactDetailsPartner" />
+        <NavigationProperty Name="PostalDetails" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner" ToRole="PostalDetails" FromRole="PostalDetailsPartner" />
+      </EntityType>
+      <EntityType Name="DispensePatient">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="Aboriginal" Type="Edm.String" Nullable="false" />
+        <Property Name="AlwaysPrivate" Type="Edm.String" Nullable="false" />
+        <Property Name="Annotations" Type="Edm.String" />
+        <Property Name="BedNumber" Type="Edm.String" />
+        <Property Name="ClosingTheGap" Type="Edm.String" Nullable="false" />
+        <Property Name="ConcessionNumber" Type="Edm.String" />
+        <Property Name="ConcessionValidTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ConsentFlag" Type="Edm.String" Nullable="false" />
+        <Property Name="CorrectedMedicareNumber" Type="Edm.String" />
+        <Property Name="CorrectedMedicareValidTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CustAccount" Type="Edm.String" />
+        <Property Name="DebtorAutoChargeMethod" Type="Edm.String" Nullable="false" />
+        <Property Name="DefaultChargeAccountType" Type="Edm.String" />
+        <Property Name="EntitlementIDNotification_14" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ErxConsent" Type="Edm.String" Nullable="false" />
+        <Property Name="ExternalSafetyNetAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ExternalSafetyNetCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FamilyIdentifier" Type="Edm.Guid" Nullable="false" />
+        <Property Name="FamilyIndicator" Type="Edm.String" Nullable="false" />
+        <Property Name="GenericOnly" Type="Edm.String" Nullable="false" />
+        <Property Name="IHI" Type="Edm.String" />
+        <Property Name="MedicareExpiryFormat" Type="Edm.String" />
+        <Property Name="MedicareFirstName" Type="Edm.String" />
+        <Property Name="MedicareLastName" Type="Edm.String" />
+        <Property Name="MedicareNumber" Type="Edm.String" />
+        <Property Name="MedicareNumberNotificatio_26" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="MedicarePromptOnNextDispe_27" Type="Edm.String" Nullable="false" />
+        <Property Name="MedicareValidTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="NursingHomeRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PackingFrom" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PackingGroupRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PackingStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="PackingSuspendFrom" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PackingSuspendTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PackingTo" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PatientStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="PreferredPrescriberRefRec_37" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PreviousExternalSafetyNet_38" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PreviousInternalSafetyNet_39" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RepatNumber" Type="Edm.String" />
+        <Property Name="RepatType" Type="Edm.String" Nullable="false" />
+        <Property Name="RepeatsHeldAtPharmacy" Type="Edm.String" Nullable="false" />
+        <Property Name="RoomNumber" Type="Edm.String" />
+        <Property Name="SafetyNetNumber" Type="Edm.String" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="TorresStraitIslander" Type="Edm.String" Nullable="false" />
+        <Property Name="URNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="WardNumber" Type="Edm.String" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <NavigationProperty Name="dispensePatient" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DispensePatient_dispensePatient_FredNXT_Web_Model_DispensePatient_dispensePatientPartner" ToRole="dispensePatient" FromRole="dispensePatientPartner" />
+      </EntityType>
+      <EntityType Name="DispenseScript">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="AddedDDFee" Type="Edm.String" Nullable="false" />
+        <Property Name="ApprovalNumber" Type="Edm.String" />
+        <Property Name="AuthorisedBy" Type="Edm.String" />
+        <Property Name="AuthorityNumber" Type="Edm.String" />
+        <Property Name="AutoProcessAccount" Type="Edm.String" />
+        <Property Name="AutoProcessCharge" Type="Edm.String" Nullable="false" />
+        <Property Name="AutoProcessLogic" Type="Edm.String" />
+        <Property Name="AutoProcessPrice" Type="Edm.String" Nullable="false" />
+        <Property Name="AutoProcessQuantity" Type="Edm.String" Nullable="false" />
+        <Property Name="ConcessionNumber" Type="Edm.String" />
+        <Property Name="ContinuedDispensing" Type="Edm.String" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CtgAnnotationCode" Type="Edm.String" />
+        <Property Name="CTGCoPaymentRelief" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Deferred" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DirectionsAbbreviated" Type="Edm.String" />
+        <Property Name="DirectionsERX" Type="Edm.String" />
+        <Property Name="DirectionsFull" Type="Edm.String" />
+        <Property Name="DispenseDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DispenseNote" Type="Edm.String" />
+        <Property Name="DispensingPharmacyNumber" Type="Edm.String" />
+        <Property Name="DrugSchedule" Type="Edm.String" />
+        <Property Name="DrugVerification" Type="Edm.String" Nullable="false" />
+        <Property Name="ErxSequenceNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="eScriptIncentive" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="FastRepeatCode" Type="Edm.String" />
+        <Property Name="FullPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="GenericSubstitutionUsed" Type="Edm.Int32" Nullable="false" />
+        <Property Name="GovernmentEstimatedRebate_30" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="HospitalProviderNumber" Type="Edm.String" />
+        <Property Name="ImmediateSupply" Type="Edm.String" Nullable="false" />
+        <Property Name="IsPriceOverridden" Type="Edm.String" Nullable="false" />
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="LastDispensedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="MedicareCardType" Type="Edm.String" Nullable="false" />
+        <Property Name="MedicareExpiry" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="MedicareFirstName" Type="Edm.String" />
+        <Property Name="MedicareLastName" Type="Edm.String" />
+        <Property Name="MedicareNumber" Type="Edm.String" />
+        <Property Name="OnHold" Type="Edm.String" Nullable="false" />
+        <Property Name="OperatorId" Type="Edm.String" />
+        <Property Name="OperatorName" Type="Edm.String" />
+        <Property Name="ORIGIN" Type="Edm.String" />
+        <Property Name="OriginalPharmacyNumber" Type="Edm.String" />
+        <Property Name="OriginalScriptNumber" Type="Edm.String" />
+        <Property Name="OutsideRepeat" Type="Edm.String" Nullable="false" />
+        <Property Name="Owing" Type="Edm.String" Nullable="false" />
+        <Property Name="ParentSCID" Type="Edm.String" />
+        <Property Name="PartnerScriptID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PatientCategory" Type="Edm.String" />
+        <Property Name="PatientNursingHomeRefRecI_52" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PatientPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PatientPriceCalculation" Type="Edm.String" />
+        <Property Name="PatientRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PBSCode" Type="Edm.String" />
+        <Property Name="PremiumFreeIncentive" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrescribedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PrescriberNote" Type="Edm.String" />
+        <Property Name="PrescriberRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PreviousSupplyRxNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrfSafetyNetContribution" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceMatchReason" Type="Edm.String" />
+        <Property Name="PricingLevel" Type="Edm.String" Nullable="false" />
+        <Property Name="PrivateDispenseFee" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrivateMarkup" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrivateNarcoticsFee" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrivateNonSwitchable" Type="Edm.String" Nullable="false" />
+        <Property Name="PrivateSchedule3Fee" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PrivateTax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Reg24Dispensing" Type="Edm.String" Nullable="false" />
+        <Property Name="RepatNumber" Type="Edm.String" />
+        <Property Name="RepatType" Type="Edm.String" Nullable="false" />
+        <Property Name="RepeatInterval" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RepeatNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Repeats" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReplicationCounter" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetailPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="SafetyNetNumber" Type="Edm.String" />
+        <Property Name="SCID" Type="Edm.String" />
+        <Property Name="ScriptID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ScriptNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ScriptTypeRefRecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SN20" Type="Edm.String" Nullable="false" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="TerminalId" Type="Edm.String" />
+        <Property Name="WholesaleCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+        <Property Name="ScriptType" Type="Edm.String" />
+        <Property Name="PrescriberNumber" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PrescriberCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DispenseClaimDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DispenseClaimCategory" Type="Edm.String" />
+        <Property Name="DispenseClaimSerialNumber" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ScriptStatus" Type="Edm.String" Nullable="false" />
+        <Property Name="PrescriberAccount" Type="Edm.String" />
+        <NavigationProperty Name="DispenseScripts" Relationship="FredNXT.Web.Model.FredNXT_Web_Model_DispenseScript_DispenseScripts_FredNXT_Web_Model_DispenseScript_DispenseScriptsPartner" ToRole="DispenseScripts" FromRole="DispenseScriptsPartner" />
+      </EntityType>
+      <EntityType Name="DispenseScriptTransaction">
+        <Key>
+          <PropertyRef Name="RecId" />
+        </Key>
+        <Property Name="LineId" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ORIGIN" Type="Edm.String" />
+        <Property Name="ReplicationCounter" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ScriptID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="TerminalId" Type="Edm.String" />
+        <Property Name="TransactionChannel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TransactionDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="TransactionId" Type="Edm.String" />
+        <Property Name="TransactionOperatorId" Type="Edm.String" />
+        <Property Name="TransactionReceiptId" Type="Edm.String" />
+        <Property Name="TransactionType" Type="Edm.String" Nullable="false" />
+        <Property Name="RecId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DataAreaId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="CustomerDebtor">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CreditLimit" Type="Edm.Decimal" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Address">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Primary" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Postcode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Statement" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ContactInformation">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Information" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" Nullable="false" />
+        <Property Name="Primary" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <Association Name="FredNXT_Web_Model_Customer_CustomerDebtor_FredNXT_Web_Model_CustomerDebtor_CustomerDebtorPartner">
+        <End Type="FredNXT.Web.Model.CustomerDebtor" Role="CustomerDebtor" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.Customer" Role="CustomerDebtorPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_Customer_Addresses_FredNXT_Web_Model_Address_AddressesPartner">
+        <End Type="FredNXT.Web.Model.Address" Role="Addresses" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.Customer" Role="AddressesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_Customer_ContactInformation_FredNXT_Web_Model_ContactInformation_ContactInformationPartner">
+        <End Type="FredNXT.Web.Model.ContactInformation" Role="ContactInformation" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.Customer" Role="ContactInformationPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_CustTable_SalesItems_FredNXT_Web_Model_SalesTable_SalesItemsPartner">
+        <End Type="FredNXT.Web.Model.SalesTable" Role="SalesItems" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.CustTable" Role="SalesItemsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_CustTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner">
+        <End Type="FredNXT.Web.Model.DirPartyTable" Role="ContactDetails" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.CustTable" Role="ContactDetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_CustTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner">
+        <End Type="FredNXT.Web.Model.LogisticsPostalAddress" Role="PostalDetails" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.CustTable" Role="PostalDetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_InventTable_FredNXT_Web_Model_InventTable_InventTablePartner">
+        <End Type="FredNXT.Web.Model.InventTable" Role="InventTable" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="InventTablePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_EcoresProduct_FredNXT_Web_Model_EcoresProduct_EcoresProductPartner">
+        <End Type="FredNXT.Web.Model.EcoresProduct" Role="EcoresProduct" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="EcoresProductPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_EcoResProductTranslation_FredNXT_Web_Model_EcoResProductTranslation_EcoResProductTranslationPartner">
+        <End Type="FredNXT.Web.Model.EcoResProductTranslation" Role="EcoResProductTranslation" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="EcoResProductTranslationPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_RetailInventTable_FredNXT_Web_Model_RetailInventTable_RetailInventTablePartner">
+        <End Type="FredNXT.Web.Model.RetailInventTable" Role="RetailInventTable" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="RetailInventTablePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_CustVendExternalItem_FredNXT_Web_Model_CustVendExternalItem_CustVendExternalItemPartner">
+        <End Type="FredNXT.Web.Model.CustVendExternalItem" Role="CustVendExternalItem" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="CustVendExternalItemPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_ModuleInvent_FredNXT_Web_Model_InventTableModule_ModuleInventPartner">
+        <End Type="FredNXT.Web.Model.InventTableModule" Role="ModuleInvent" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="ModuleInventPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_ModulePurch_FredNXT_Web_Model_InventTableModule_ModulePurchPartner">
+        <End Type="FredNXT.Web.Model.InventTableModule" Role="ModulePurch" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="ModulePurchPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DMFProductTargetEntity_ModuleSales_FredNXT_Web_Model_InventTableModule_ModuleSalesPartner">
+        <End Type="FredNXT.Web.Model.InventTableModule" Role="ModuleSales" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DMFProductTargetEntity" Role="ModuleSalesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_Barcodes_FredNXT_Web_Model_InventItemBarcode_BarcodesPartner">
+        <End Type="FredNXT.Web.Model.InventItemBarcode" Role="Barcodes" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="BarcodesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_PurchTaxOnItem_FredNXT_Web_Model_TaxOnItem_PurchTaxOnItemPartner">
+        <End Type="FredNXT.Web.Model.TaxOnItem" Role="PurchTaxOnItem" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="PurchTaxOnItemPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_SalesTaxOnItem_FredNXT_Web_Model_TaxOnItem_SalesTaxOnItemPartner">
+        <End Type="FredNXT.Web.Model.TaxOnItem" Role="SalesTaxOnItem" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="SalesTaxOnItemPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_PriceDiscTable_FredNXT_Web_Model_PriceDiscTable_PriceDiscTablePartner">
+        <End Type="FredNXT.Web.Model.PriceDiscTable" Role="PriceDiscTable" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="PriceDiscTablePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_InventSum_FredNXT_Web_Model_InventSum_InventSumPartner">
+        <End Type="FredNXT.Web.Model.InventSum" Role="InventSum" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="InventSumPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_InventTable__Summary_InventPromotion_FredNXT_Web_Model_InventPromotion_InventPromotionPartner">
+        <End Type="FredNXT.Web.Model.InventPromotion" Role="InventPromotion" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.InventTable_Summary" Role="InventPromotionPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_PurchTable_PurchLines_FredNXT_Web_Model_PurchLine_PurchLinesPartner">
+        <End Type="FredNXT.Web.Model.PurchLine" Role="PurchLines" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.PurchTable" Role="PurchLinesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_SalesTable_SalesLines_FredNXT_Web_Model_SalesLine_SalesLinesPartner">
+        <End Type="FredNXT.Web.Model.SalesLine" Role="SalesLines" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.SalesTable" Role="SalesLinesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_VendTable_PurchItems_FredNXT_Web_Model_PurchTable_PurchItemsPartner">
+        <End Type="FredNXT.Web.Model.PurchTable" Role="PurchItems" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.VendTable" Role="PurchItemsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_VendTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner">
+        <End Type="FredNXT.Web.Model.DirPartyTable" Role="ContactDetails" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.VendTable" Role="ContactDetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_VendTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner">
+        <End Type="FredNXT.Web.Model.LogisticsPostalAddress" Role="PostalDetails" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.VendTable" Role="PostalDetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DispensePatient_dispensePatient_FredNXT_Web_Model_DispensePatient_dispensePatientPartner">
+        <End Type="FredNXT.Web.Model.DispensePatient" Role="dispensePatient" Multiplicity="0..1" />
+        <End Type="FredNXT.Web.Model.DispensePatient" Role="dispensePatientPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FredNXT_Web_Model_DispenseScript_DispenseScripts_FredNXT_Web_Model_DispenseScript_DispenseScriptsPartner">
+        <End Type="FredNXT.Web.Model.DispenseScript" Role="DispenseScripts" Multiplicity="*" />
+        <End Type="FredNXT.Web.Model.DispenseScript" Role="DispenseScriptsPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Customers" EntityType="FredNXT.Web.Model.Customer" />
+        <EntitySet Name="CustTables" EntityType="FredNXT.Web.Model.CustTable" />
+        <EntitySet Name="CustVendExternalItems" EntityType="FredNXT.Web.Model.CustVendExternalItem" />
+        <EntitySet Name="DirPartyTables" EntityType="FredNXT.Web.Model.DirPartyTable" />
+        <EntitySet Name="DMFProductTargetEntities" EntityType="FredNXT.Web.Model.DMFProductTargetEntity" />
+        <EntitySet Name="EcoresProducts" EntityType="FredNXT.Web.Model.EcoresProduct" />
+        <EntitySet Name="EcoResProductTranslations" EntityType="FredNXT.Web.Model.EcoResProductTranslation" />
+        <EntitySet Name="HcmWorkers" EntityType="FredNXT.Web.Model.HcmWorker" />
+        <EntitySet Name="InventDims" EntityType="FredNXT.Web.Model.InventDim" />
+        <EntitySet Name="InventJournalTrans" EntityType="FredNXT.Web.Model.InventJournalTrans" />
+        <EntitySet Name="InventItemBarcodes" EntityType="FredNXT.Web.Model.InventItemBarcode" />
+        <EntitySet Name="InventPromotions" EntityType="FredNXT.Web.Model.InventPromotion" />
+        <EntitySet Name="InventSums" EntityType="FredNXT.Web.Model.InventSum" />
+        <EntitySet Name="InventTables" EntityType="FredNXT.Web.Model.InventTable" />
+        <EntitySet Name="InventTableModules" EntityType="FredNXT.Web.Model.InventTableModule" />
+        <EntitySet Name="InventTable_Summary" EntityType="FredNXT.Web.Model.InventTable_Summary" />
+        <EntitySet Name="InventTrans" EntityType="FredNXT.Web.Model.InventTrans" />
+        <EntitySet Name="InventTransOrigins" EntityType="FredNXT.Web.Model.InventTransOrigin" />
+        <EntitySet Name="LogisticsPostalAddresses" EntityType="FredNXT.Web.Model.LogisticsPostalAddress" />
+        <EntitySet Name="PriceDiscTables" EntityType="FredNXT.Web.Model.PriceDiscTable" />
+        <EntitySet Name="ProductDatas" EntityType="FredNXT.Web.Model.ProductData" />
+        <EntitySet Name="PurchLines" EntityType="FredNXT.Web.Model.PurchLine" />
+        <EntitySet Name="PurchTables" EntityType="FredNXT.Web.Model.PurchTable" />
+        <EntitySet Name="RetailInventTables" EntityType="FredNXT.Web.Model.RetailInventTable" />
+        <EntitySet Name="RetailTransactionDiscountTrans" EntityType="FredNXT.Web.Model.RetailTransactionDiscountTrans" />
+        <EntitySet Name="RetailTransactionPaymentTrans" EntityType="FredNXT.Web.Model.RetailTransactionPaymentTrans" />
+        <EntitySet Name="RetailTransactionSalesTrans" EntityType="FredNXT.Web.Model.RetailTransactionSalesTrans" />
+        <EntitySet Name="RetailTransactionTables" EntityType="FredNXT.Web.Model.RetailTransactionTable" />
+        <EntitySet Name="SalesLines" EntityType="FredNXT.Web.Model.SalesLine" />
+        <EntitySet Name="SalesTables" EntityType="FredNXT.Web.Model.SalesTable" />
+        <EntitySet Name="TaxOnItems" EntityType="FredNXT.Web.Model.TaxOnItem" />
+        <EntitySet Name="VendTables" EntityType="FredNXT.Web.Model.VendTable" />
+        <EntitySet Name="DispensePatients" EntityType="FredNXT.Web.Model.DispensePatient" />
+        <EntitySet Name="DispenseScripts" EntityType="FredNXT.Web.Model.DispenseScript" />
+        <EntitySet Name="DispenseScriptTransactions" EntityType="FredNXT.Web.Model.DispenseScriptTransaction" />
+        <AssociationSet Name="FredNXT_Web_Model_CustTable_SalesItems_FredNXT_Web_Model_SalesTable_SalesItemsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_SalesItems_FredNXT_Web_Model_SalesTable_SalesItemsPartner">
+          <End Role="SalesItemsPartner" EntitySet="CustTables" />
+          <End Role="SalesItems" EntitySet="SalesTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_CustTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner">
+          <End Role="ContactDetailsPartner" EntitySet="CustTables" />
+          <End Role="ContactDetails" EntitySet="DirPartyTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_CustTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_CustTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner">
+          <End Role="PostalDetailsPartner" EntitySet="CustTables" />
+          <End Role="PostalDetails" EntitySet="LogisticsPostalAddresses" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_InventTable_FredNXT_Web_Model_InventTable_InventTablePartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_InventTable_FredNXT_Web_Model_InventTable_InventTablePartner">
+          <End Role="InventTablePartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="InventTable" EntitySet="InventTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_EcoresProduct_FredNXT_Web_Model_EcoresProduct_EcoresProductPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_EcoresProduct_FredNXT_Web_Model_EcoresProduct_EcoresProductPartner">
+          <End Role="EcoresProductPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="EcoresProduct" EntitySet="EcoresProducts" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_EcoResProductTranslation_FredNXT_Web_Model_EcoResProductTranslation_EcoResProductTranslationPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_EcoResProductTranslation_FredNXT_Web_Model_EcoResProductTranslation_EcoResProductTranslationPartner">
+          <End Role="EcoResProductTranslationPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="EcoResProductTranslation" EntitySet="EcoResProductTranslations" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_RetailInventTable_FredNXT_Web_Model_RetailInventTable_RetailInventTablePartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_RetailInventTable_FredNXT_Web_Model_RetailInventTable_RetailInventTablePartner">
+          <End Role="RetailInventTablePartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="RetailInventTable" EntitySet="RetailInventTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_CustVendExternalItem_FredNXT_Web_Model_CustVendExternalItem_CustVendExternalItemPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_CustVendExternalItem_FredNXT_Web_Model_CustVendExternalItem_CustVendExternalItemPartner">
+          <End Role="CustVendExternalItemPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="CustVendExternalItem" EntitySet="CustVendExternalItems" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_ModuleInvent_FredNXT_Web_Model_InventTableModule_ModuleInventPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModuleInvent_FredNXT_Web_Model_InventTableModule_ModuleInventPartner">
+          <End Role="ModuleInventPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="ModuleInvent" EntitySet="InventTableModules" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_ModulePurch_FredNXT_Web_Model_InventTableModule_ModulePurchPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModulePurch_FredNXT_Web_Model_InventTableModule_ModulePurchPartner">
+          <End Role="ModulePurchPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="ModulePurch" EntitySet="InventTableModules" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DMFProductTargetEntity_ModuleSales_FredNXT_Web_Model_InventTableModule_ModuleSalesPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DMFProductTargetEntity_ModuleSales_FredNXT_Web_Model_InventTableModule_ModuleSalesPartner">
+          <End Role="ModuleSalesPartner" EntitySet="DMFProductTargetEntities" />
+          <End Role="ModuleSales" EntitySet="InventTableModules" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_Barcodes_FredNXT_Web_Model_InventItemBarcode_BarcodesPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_Barcodes_FredNXT_Web_Model_InventItemBarcode_BarcodesPartner">
+          <End Role="BarcodesPartner" EntitySet="InventTable_Summary" />
+          <End Role="Barcodes" EntitySet="InventItemBarcodes" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_PurchTaxOnItem_FredNXT_Web_Model_TaxOnItem_PurchTaxOnItemPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_PurchTaxOnItem_FredNXT_Web_Model_TaxOnItem_PurchTaxOnItemPartner">
+          <End Role="PurchTaxOnItemPartner" EntitySet="InventTable_Summary" />
+          <End Role="PurchTaxOnItem" EntitySet="TaxOnItems" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_SalesTaxOnItem_FredNXT_Web_Model_TaxOnItem_SalesTaxOnItemPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_SalesTaxOnItem_FredNXT_Web_Model_TaxOnItem_SalesTaxOnItemPartner">
+          <End Role="SalesTaxOnItemPartner" EntitySet="InventTable_Summary" />
+          <End Role="SalesTaxOnItem" EntitySet="TaxOnItems" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_PriceDiscTable_FredNXT_Web_Model_PriceDiscTable_PriceDiscTablePartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_PriceDiscTable_FredNXT_Web_Model_PriceDiscTable_PriceDiscTablePartner">
+          <End Role="PriceDiscTablePartner" EntitySet="InventTable_Summary" />
+          <End Role="PriceDiscTable" EntitySet="PriceDiscTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_InventSum_FredNXT_Web_Model_InventSum_InventSumPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_InventSum_FredNXT_Web_Model_InventSum_InventSumPartner">
+          <End Role="InventSumPartner" EntitySet="InventTable_Summary" />
+          <End Role="InventSum" EntitySet="InventSums" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_InventTable__Summary_InventPromotion_FredNXT_Web_Model_InventPromotion_InventPromotionPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_InventTable__Summary_InventPromotion_FredNXT_Web_Model_InventPromotion_InventPromotionPartner">
+          <End Role="InventPromotionPartner" EntitySet="InventTable_Summary" />
+          <End Role="InventPromotion" EntitySet="InventPromotions" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_PurchTable_PurchLines_FredNXT_Web_Model_PurchLine_PurchLinesPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_PurchTable_PurchLines_FredNXT_Web_Model_PurchLine_PurchLinesPartner">
+          <End Role="PurchLinesPartner" EntitySet="PurchTables" />
+          <End Role="PurchLines" EntitySet="PurchLines" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_SalesTable_SalesLines_FredNXT_Web_Model_SalesLine_SalesLinesPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_SalesTable_SalesLines_FredNXT_Web_Model_SalesLine_SalesLinesPartner">
+          <End Role="SalesLinesPartner" EntitySet="SalesTables" />
+          <End Role="SalesLines" EntitySet="SalesLines" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_VendTable_PurchItems_FredNXT_Web_Model_PurchTable_PurchItemsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_PurchItems_FredNXT_Web_Model_PurchTable_PurchItemsPartner">
+          <End Role="PurchItemsPartner" EntitySet="VendTables" />
+          <End Role="PurchItems" EntitySet="PurchTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_VendTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_ContactDetails_FredNXT_Web_Model_DirPartyTable_ContactDetailsPartner">
+          <End Role="ContactDetailsPartner" EntitySet="VendTables" />
+          <End Role="ContactDetails" EntitySet="DirPartyTables" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_VendTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_VendTable_PostalDetails_FredNXT_Web_Model_LogisticsPostalAddress_PostalDetailsPartner">
+          <End Role="PostalDetailsPartner" EntitySet="VendTables" />
+          <End Role="PostalDetails" EntitySet="LogisticsPostalAddresses" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DispensePatient_dispensePatient_FredNXT_Web_Model_DispensePatient_dispensePatientPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DispensePatient_dispensePatient_FredNXT_Web_Model_DispensePatient_dispensePatientPartner">
+          <End Role="dispensePatientPartner" EntitySet="DispensePatients" />
+          <End Role="dispensePatient" EntitySet="DispensePatients" />
+        </AssociationSet>
+        <AssociationSet Name="FredNXT_Web_Model_DispenseScript_DispenseScripts_FredNXT_Web_Model_DispenseScript_DispenseScriptsPartnerSet" Association="FredNXT.Web.Model.FredNXT_Web_Model_DispenseScript_DispenseScripts_FredNXT_Web_Model_DispenseScript_DispenseScriptsPartner">
+          <End Role="DispenseScriptsPartner" EntitySet="DispenseScripts" />
+          <End Role="DispenseScripts" EntitySet="DispenseScripts" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
